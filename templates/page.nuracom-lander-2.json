@@ -14,11 +14,12 @@
       "settings": {
         "badge_text": "Australia's #1 Smart Drying System",
         "headline": "<p>Stop Letting the Weather Decide When You Do <em>Laundry.</em></p>",
-        "subheadline": "Nuracom's smart drying technology dries your clothes indoors in hours, not days — using turbo-fan airflow that costs under $1 per use. No dryer. No weather app. No stress.",
+        "subheadline": "Nuracom's smart drying technology dries your clothes indoors in hours, not days — using turbo-fan airflow that costs under $1 per use. No dryer. No weather app. No stress. Real Cost Savings too! See below.",
         "primary_btn_text": "See the Range",
-        "primary_btn_url": "",
+        "primary_btn_url": "shopify://collections/all",
         "secondary_btn_text": "Real  $ Savings",
-        "secondary_btn_url": "",
+        "secondary_btn_url": "#warranty-trust",
+        "hero_image": "shopify://shop_images/Nuracom_Stratos_in_Action.png",
         "show_proof": true,
         "proof_headline": "Trusted by Australian families",
         "proof_subtext": "Hundreds of 5-star reviews nationwide",
@@ -233,7 +234,7 @@
           "settings": {
             "icon": "🇦🇺",
             "title": "Local Support, Real People",
-            "text": "Australian-designed for Australian homes. Local customer support that actually picks up. You're not dealing with a faceless import brand — we're here when you need us."
+            "text": "Australian-designed for Australian homes. Local customer support that actually responds. You're not dealing with a faceless import brand — we're here when you need us."
           }
         },
         "tc_3": {
@@ -308,11 +309,15 @@
     "shift_nlr2": {
       "type": "nuracom-shift",
       "settings": {
+        "tag_text": "The Turning Point",
         "headline": "<p>What if drying clothes indoors was <em>actually solved?</em></p>",
         "text_1": "Not managed. Not tolerated. Not worked around with cheap racks and crossed fingers.",
         "text_2": "What if there was a system that dried your clothes in hours — every time, rain or shine — using less power than a light bulb? A system you could mount once, operate with one touch, and never think about again?",
         "show_divider": true,
-        "text_3": "There is. And the technology behind it is simpler than you'd expect.",
+        "answer_text": "There is.",
+        "answer_sub": "And the technology behind it is simpler than you'd expect.",
+        "show_scroll_hint": true,
+        "scroll_hint_text": "See how",
         "navy": "#101a32",
         "brand_deep": "#5e0404",
         "brand_accent": "#a8321a",
@@ -326,6 +331,7 @@
         "ms_1": {
           "type": "mechanism_step",
           "settings": {
+            "image": "shopify://shop_images/Nuracom_stratos_powerful_drying_airflow.png",
             "step_number": "01",
             "icon": "🌀",
             "kicker": "Innovation One",
@@ -338,6 +344,7 @@
         "ms_2": {
           "type": "mechanism_step",
           "settings": {
+            "image": "shopify://shop_images/Heat_rises.png",
             "step_number": "02",
             "icon": "▲",
             "kicker": "Innovation Two",
@@ -350,6 +357,7 @@
         "ms_3": {
           "type": "mechanism_step",
           "settings": {
+            "image": "shopify://shop_images/UV-C_disinfection_in_action.png",
             "step_number": "03",
             "icon": "✨",
             "kicker": "Innovation Three",
@@ -385,6 +393,7 @@
         "p_1": {
           "type": "product",
           "settings": {
+            "image": "shopify://shop_images/Nuracom_Breeze_Black_Cropped.png",
             "fallback_icon": "🌬",
             "name": "Nuracom Breeze",
             "tagline": "The Trendsetter",
@@ -400,15 +409,16 @@
             "feature_4": "One-Touch Lifting",
             "feature_5": "Ultra-Silent Motors",
             "feature_6": "Obstruction Sensing",
-            "feature_7": "",
+            "feature_7": "Extreme Energy Efficiency",
             "feature_8": "",
             "cta_text": "View Breeze",
-            "cta_url": ""
+            "cta_url": "shopify://products/nuracom-breeze"
           }
         },
         "p_2": {
           "type": "product",
           "settings": {
+            "image": "shopify://shop_images/Artboard_1.png",
             "fallback_icon": "☁️",
             "name": "Nuracom Aero",
             "tagline": "The New Standard",
@@ -433,11 +443,12 @@
         "p_3": {
           "type": "product",
           "settings": {
+            "image": "shopify://shop_images/Nuracom_Stratos_Cropped_18910dc4-f135-4082-9d69-46683fd579cc.png",
             "fallback_icon": "🚀",
             "name": "Nuracom Stratos",
             "tagline": "The State of The Art",
-            "featured": false,
-            "badge_text": "",
+            "featured": true,
+            "badge_text": "Top of the Line",
             "spec_1_value": "6",
             "spec_1_label": "Turbo Fans",
             "spec_2_value": "40kg",
@@ -451,7 +462,7 @@
             "feature_7": "",
             "feature_8": "",
             "cta_text": "View Stratos",
-            "cta_url": ""
+            "cta_url": "shopify://products/nuracom-stratos"
           }
         }
       },
@@ -466,6 +477,8 @@
         "subheading": "Three models. One guarantee: a perfect dry, every time.",
         "bg_color": "#f8f5f1",
         "brand_deep": "#5e0404",
+        "badge_color": "#5e0404",
+        "badge_text_color": "#ffffff",
         "brand_dark": "#801f0a",
         "brand_accent": "#a8321a",
         "navy": "#101a32",
@@ -513,6 +526,9 @@
         "kicker": "Simple Setup",
         "heading": "Install It Yourself in Under 30 Minutes",
         "body_text": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom.",
+        "video_url": "",
+        "video_cta_text": "See full install guide",
+        "video_cta_url": "",
         "visual_icon": "🔧",
         "visual_placeholder_text": "[Installation walkthrough image/video here]",
         "guarantee_icon": "📖",
@@ -733,6 +749,10 @@
         "check_2": "Up to 5-year warranty",
         "check_3": "Under $1 per use",
         "check_4": "DIY install in 30 mins",
+        "check_5": "",
+        "check_6": "",
+        "check_7": "",
+        "check_8": "",
         "bg_color": "#ffffff",
         "brand_deep": "#5e0404",
         "brand_dark": "#801f0a",
