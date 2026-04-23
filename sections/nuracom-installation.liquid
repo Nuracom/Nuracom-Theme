@@ -1,0 +1,289 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.headline-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.body-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#shopify-section-{{ section.id }} .install {
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+}
+
+#shopify-section-{{ section.id }} .install__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} .install__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#shopify-section-{{ section.id }} .install__step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+#shopify-section-{{ section.id }} .install__step-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--brand-deep);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+#shopify-section-{{ section.id }} .install__step-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+#shopify-section-{{ section.id }} .install__step-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+#shopify-section-{{ section.id }} .install__visual {
+  background: linear-gradient(135deg, var(--warm-gray), #d4cfc9);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+#shopify-section-{{ section.id }} .install__visual-inner {
+  text-align: center;
+  padding: 40px;
+}
+
+#shopify-section-{{ section.id }} .install__visual-icon {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+#shopify-section-{{ section.id }} .install__visual-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+#shopify-section-{{ section.id }} .install__guarantee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+#shopify-section-{{ section.id }} .install__guarantee-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+#shopify-section-{{ section.id }} .install__guarantee-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+#shopify-section-{{ section.id }} .install__guarantee-text strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .install__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+</style>
+
+<section class="install" id="shopify-section-{{ section.id }}">
+  <div class="container">
+    <div class="install__grid">
+      <div class="reveal">
+        <span class="kicker">{{ section.settings.kicker }}</span>
+        <h2 class="headline-lg">{{ section.settings.heading }}</h2>
+        <p class="body-text">{{ section.settings.description }}</p>
+
+        <div class="install__steps">
+          {% for block in section.blocks %}
+            <div class="install__step">
+              <div class="install__step-number">{{ forloop.index }}</div>
+              <div class="install__step-content">
+                <h4>{{ block.settings.title }}</h4>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="install__guarantee">
+          <div class="install__guarantee-icon">📖</div>
+          <div class="install__guarantee-text">
+            {{ section.settings.guarantee_text }}
+          </div>
+        </div>
+      </div>
+
+      <div class="install__visual reveal">
+        {% if section.settings.image %}
+          {{ section.settings.image | image_url: width: 600 | image_tag }}
+        {% else %}
+          <div class="install__visual-inner">
+            <div class="install__visual-icon">🔧</div>
+            <p class="install__visual-text">[Installation walkthrough image/video here]</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Installation",
+  "tag": "section",
+  "class": "nuracom-installation-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Simple Setup"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Install It Yourself in Under 30 Minutes"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Installation Image"
+    },
+    {
+      "type": "textarea",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "<strong>Full video walkthrough included</strong> with every purchase, plus a detailed printed manual. Our support team is also available if you need any help."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Installation Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description",
+          "default": "Step description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Installation"
+    }
+  ]
+}
+{% endschema %}

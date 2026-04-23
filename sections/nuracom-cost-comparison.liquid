@@ -1,0 +1,534 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.headline-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.subhead {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.subhead--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#shopify-section-{{ section.id }} .cost {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+#shopify-section-{{ section.id }} .cost__header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px;
+}
+
+#shopify-section-{{ section.id }} .cost__comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: stretch;
+  max-width: 960px;
+  margin: 0 auto 40px;
+}
+
+#shopify-section-{{ section.id }} .cost__card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom {
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+}
+
+#shopify-section-{{ section.id }} .cost__card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.6;
+}
+
+#shopify-section-{{ section.id }} .cost__card-method {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+#shopify-section-{{ section.id }} .cost__card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+#shopify-section-{{ section.id }} .cost__card-per {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+#shopify-section-{{ section.id }} .cost__card-breakdown {
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom .cost__card-breakdown {
+  border-top-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+}
+
+#shopify-section-{{ section.id }} .cost__card-breakdown strong {
+  font-weight: 700;
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom .cost__card-breakdown strong {
+  color: #fff;
+}
+
+#shopify-section-{{ section.id }} .cost__card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 2px 0;
+}
+
+#shopify-section-{{ section.id }} .cost__card-row--total {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 8px;
+  padding-top: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom .cost__card-row--total {
+  border-top-color: rgba(255,255,255,0.2);
+}
+
+#shopify-section-{{ section.id }} .cost__card-capacity {
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom .cost__card-capacity {
+  background: rgba(255,255,255,0.08);
+}
+
+#shopify-section-{{ section.id }} .cost__card-annual {
+  font-size: 0.95rem;
+  padding: 14px 0 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: auto;
+}
+
+#shopify-section-{{ section.id }} .cost__card--nuracom .cost__card-annual {
+  border-top-color: rgba(255,255,255,0.15);
+}
+
+#shopify-section-{{ section.id }} .cost__card-annual strong {
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 4px;
+}
+
+#shopify-section-{{ section.id }} .cost__vs {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+#shopify-section-{{ section.id }} .cost__capacity-note {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  background: #fef3c7;
+  border-radius: var(--radius);
+  padding: 20px 28px;
+}
+
+#shopify-section-{{ section.id }} .cost__capacity-headline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 4px;
+}
+
+#shopify-section-{{ section.id }} .cost__capacity-text {
+  font-size: 0.9rem;
+  color: #92400e;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+#shopify-section-{{ section.id }} .cost__savings {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#shopify-section-{{ section.id }} .cost__savings-box {
+  background: #dcfce7;
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 16px;
+}
+
+#shopify-section-{{ section.id }} .cost__savings-headline {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #166534;
+  margin-bottom: 6px;
+}
+
+#shopify-section-{{ section.id }} .cost__savings-sub {
+  font-size: 0.95rem;
+  color: #166534;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+#shopify-section-{{ section.id }} .cost__savings-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .cost__comparison {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .cost__vs {
+    text-align: center;
+  }
+}
+</style>
+
+<section class="cost" id="shopify-section-{{ section.id }}">
+  <div class="container">
+    <div class="cost__header reveal">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h2 class="headline-lg">{{ section.settings.heading }}</h2>
+      <p class="subhead subhead--centered">{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="cost__comparison reveal">
+      <div class="cost__card">
+        <p class="cost__card-label">{{ section.settings.dryer_label }}</p>
+        <p class="cost__card-method">{{ section.settings.dryer_name }}</p>
+        <p class="cost__card-price" style="color: #dc2626;">{{ section.settings.dryer_cost_per_load }}</p>
+        <p class="cost__card-per">{{ section.settings.dryer_per_unit | default: 'per load' }}</p>
+        <div class="cost__card-breakdown">
+          <div class="cost__card-row"><span>Avg. rated power</span> <strong>{{ section.settings.dryer_power }}</strong></div>
+          <div class="cost__card-row"><span>Avg. cycle time</span> <strong>{{ section.settings.dryer_cycle_time }}</strong></div>
+          <div class="cost__card-row"><span>Energy per load</span> <strong>{{ section.settings.dryer_energy }}</strong></div>
+          <div class="cost__card-row cost__card-row--total"><span>Cost @ {{ section.settings.electricity_rate }}</span> <strong style="color: #dc2626;">{{ section.settings.dryer_cost_per_load }}</strong></div>
+        </div>
+        <div class="cost__card-capacity"><strong>Capacity: {{ section.settings.dryer_capacity_text }}</strong><br>A family of 4 averages <strong>{{ section.settings.dryer_loads_per_week }} dryer loads/week</strong></div>
+        <div class="cost__card-annual">Annual cost ({{ section.settings.dryer_loads_per_week }} loads × 52 weeks)<strong style="color: #dc2626;">{{ section.settings.dryer_annual_cost }}</strong></div>
+      </div>
+
+      <div class="cost__vs">vs</div>
+
+      <div class="cost__card cost__card--nuracom">
+        <p class="cost__card-label">{{ section.settings.nuracom_label }}</p>
+        <p class="cost__card-method">{{ section.settings.nuracom_name }}</p>
+        <p class="cost__card-price" style="color: #4ade80;">{{ section.settings.nuracom_cost_per_cycle }}</p>
+        <p class="cost__card-per">{{ section.settings.nuracom_per_unit | default: 'per cycle' }}</p>
+        <div class="cost__card-breakdown">
+          <div class="cost__card-row"><span>Rated power</span> <strong>{{ section.settings.nuracom_power }}</strong></div>
+          <div class="cost__card-row"><span>Cycle (auto shut-off)</span> <strong>{{ section.settings.nuracom_cycle_time }}</strong></div>
+          <div class="cost__card-row"><span>Energy per cycle</span> <strong>{{ section.settings.nuracom_energy }}</strong></div>
+          <div class="cost__card-row cost__card-row--total"><span>Cost @ {{ section.settings.electricity_rate }}</span> <strong style="color: #4ade80;">{{ section.settings.nuracom_cost_per_cycle }}</strong></div>
+        </div>
+        <div class="cost__card-capacity"><strong>Capacity: {{ section.settings.nuracom_capacity_text }}</strong><br>That's <strong>{{ section.settings.nuracom_loads_text }}</strong></div>
+        <div class="cost__card-annual">Annual cost ({{ section.settings.nuracom_cycles_per_week }} cycles × 52 weeks)<strong style="color: #4ade80;">{{ section.settings.nuracom_annual_cost }}</strong></div>
+      </div>
+    </div>
+
+    <div class="cost__capacity-note reveal">
+      <p class="cost__capacity-headline">{{ section.settings.capacity_headline }}</p>
+      <p class="cost__capacity-text">{{ section.settings.capacity_text }}</p>
+    </div>
+
+    <div class="cost__savings reveal">
+      <div class="cost__savings-box">
+        <p class="cost__savings-headline">{{ section.settings.savings_headline }}</p>
+        <p class="cost__savings-sub">{{ section.settings.savings_text }}</p>
+      </div>
+      <p class="cost__savings-note">{{ section.settings.savings_note }}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Cost Comparison",
+  "tag": "section",
+  "class": "nuracom-cost-comparison-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "The Maths"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Tumble Dryer Is Quietly Costing You Hundreds Every Year"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "We ran the numbers using real product specs and the current Australian average electricity rate of ~36c/kWh. Here's what most families never calculate."
+    },
+    {
+      "type": "text",
+      "id": "electricity_rate",
+      "label": "Electricity Rate",
+      "default": "36c/kWh"
+    },
+    {
+      "type": "text",
+      "id": "dryer_label",
+      "label": "Dryer Label",
+      "default": "Traditional"
+    },
+    {
+      "type": "text",
+      "id": "dryer_name",
+      "label": "Dryer Name",
+      "default": "Tumble Dryer"
+    },
+    {
+      "type": "text",
+      "id": "dryer_cost_per_load",
+      "label": "Dryer Cost Per Load",
+      "default": "$1.42"
+    },
+    {
+      "type": "text",
+      "id": "dryer_power",
+      "label": "Dryer Power",
+      "default": "~2,200W"
+    },
+    {
+      "type": "text",
+      "id": "dryer_cycle_time",
+      "label": "Dryer Cycle Time",
+      "default": "~110 min"
+    },
+    {
+      "type": "text",
+      "id": "dryer_energy",
+      "label": "Dryer Energy Per Load",
+      "default": "~4.0 kWh"
+    },
+    {
+      "type": "text",
+      "id": "dryer_capacity_text",
+      "label": "Dryer Capacity Text",
+      "default": "~7–8 kg per load"
+    },
+    {
+      "type": "text",
+      "id": "dryer_loads_per_week",
+      "label": "Dryer Loads Per Week",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "dryer_annual_cost",
+      "label": "Dryer Annual Cost",
+      "default": "$443/year"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_label",
+      "label": "Nuracom Label",
+      "default": "Smart"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_name",
+      "label": "Nuracom Name",
+      "default": "Nuracom System"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_cost_per_cycle",
+      "label": "Nuracom Cost Per Cycle",
+      "default": "$0.57"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_power",
+      "label": "Nuracom Power",
+      "default": "800W"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_cycle_time",
+      "label": "Nuracom Cycle Time",
+      "default": "2 hours"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_energy",
+      "label": "Nuracom Energy Per Cycle",
+      "default": "1.6 kWh"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_capacity_text",
+      "label": "Nuracom Capacity Text",
+      "default": "up to 35 kg"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_loads_text",
+      "label": "Nuracom Loads Text",
+      "default": "~5 dryer loads in 2–3 rack loads"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_cycles_per_week",
+      "label": "Nuracom Cycles Per Week",
+      "default": "3"
+    },
+    {
+      "type": "text",
+      "id": "nuracom_annual_cost",
+      "label": "Nuracom Annual Cost",
+      "default": "$89/year"
+    },
+    {
+      "type": "text",
+      "id": "capacity_headline",
+      "label": "Capacity Headline",
+      "default": "The capacity difference is the real game-changer"
+    },
+    {
+      "type": "textarea",
+      "id": "capacity_text",
+      "label": "Capacity Text",
+      "default": "A standard tumble dryer holds 7–8 kg per load. A Nuracom holds up to 35–45 kg depending on model — meaning the same weekly laundry that takes 6 dryer cycles can be handled in just 2–3 Nuracom cycles. Fewer cycles = dramatically less energy, even before you factor in the lower wattage."
+    },
+    {
+      "type": "text",
+      "id": "savings_headline",
+      "label": "Savings Headline",
+      "default": "Save $354+ per year on energy alone"
+    },
+    {
+      "type": "textarea",
+      "id": "savings_text",
+      "label": "Savings Text",
+      "default": "That's $443 in dryer costs vs just $89 with Nuracom. Your system pays for itself — then keeps saving you money every year after."
+    },
+    {
+      "type": "textarea",
+      "id": "savings_note",
+      "label": "Savings Note",
+      "default": "Based on the current Australian average electricity rate of ~36c/kWh (source: Canstar, CHOICE). Tumble dryer: standard vented model at ~4 kWh per load (source: CHOICE Australia). Nuracom: 800W rated, 2-hour auto shut-off cycle. Capacity based on the Nuracom Aero (35 kg); Stratos holds up to 45 kg. A family of 4 averaging ~48 kg of laundry per week (~3 Nuracom cycles vs 6 dryer loads) is used for load calculations."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cost Comparison"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,62 @@
+{
+  "name": "Nuracom Lander 2",
+  "sections": {
+    "hero_nlr2": {
+      "type": "nuracom-hero",
+      "settings": {}
+    },
+    "problem_nlr2": {
+      "type": "nuracom-problem-agitation",
+      "settings": {}
+    },
+    "shift_nlr2": {
+      "type": "nuracom-shift",
+      "settings": {}
+    },
+    "mechanism_nlr2": {
+      "type": "nuracom-mechanism",
+      "settings": {}
+    },
+    "products_nlr2": {
+      "type": "nuracom-products",
+      "settings": {}
+    },
+    "cost_nlr2": {
+      "type": "nuracom-cost-comparison",
+      "settings": {}
+    },
+    "install_nlr2": {
+      "type": "nuracom-installation",
+      "settings": {}
+    },
+    "social_nlr2": {
+      "type": "nuracom-social-proof",
+      "settings": {}
+    },
+    "warranty_nlr2": {
+      "type": "nuracom-warranty-trust",
+      "settings": {}
+    },
+    "faq_nlr2": {
+      "type": "nuracom-faq",
+      "settings": {}
+    },
+    "cta_nlr2": {
+      "type": "nuracom-final-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_nlr2",
+    "problem_nlr2",
+    "shift_nlr2",
+    "mechanism_nlr2",
+    "products_nlr2",
+    "cost_nlr2",
+    "install_nlr2",
+    "social_nlr2",
+    "warranty_nlr2",
+    "faq_nlr2",
+    "cta_nlr2"
+  ]
+}

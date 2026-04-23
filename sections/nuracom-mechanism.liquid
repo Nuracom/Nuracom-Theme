@@ -1,0 +1,238 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container--narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-accent); margin-bottom: 12px; display: block; }
+.headline-xl { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 24px; }
+.headline-lg { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; color: var(--navy); margin-bottom: 20px; }
+.subhead { font-size: clamp(1.05rem, 1.5vw, 1.2rem); color: var(--text-secondary); line-height: 1.7; max-width: 640px; }
+.subhead--centered { margin-left: auto; margin-right: auto; }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+#shopify-section-{{ section.id }} .mechanism { padding: var(--section-pad) 0; background: var(--white); }
+#shopify-section-{{ section.id }} .mechanism__header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+#shopify-section-{{ section.id }} .mechanism__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; }
+#shopify-section-{{ section.id }} .mechanism__grid--reverse { direction: rtl; }
+#shopify-section-{{ section.id }} .mechanism__grid--reverse > * { direction: ltr; }
+#shopify-section-{{ section.id }} .mechanism__visual { background: linear-gradient(135deg, var(--cream), #ede8e2); border-radius: var(--radius-lg); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; position: relative; }
+#shopify-section-{{ section.id }} .mechanism__visual img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); }
+#shopify-section-{{ section.id }} .mechanism__visual-number { font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 700; color: rgba(94,4,4,0.06); position: absolute; top: 20px; left: 30px; }
+#shopify-section-{{ section.id }} .mechanism__visual-icon { font-size: 4rem; position: relative; z-index: 2; }
+#shopify-section-{{ section.id }} .mechanism__step-kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-accent); margin-bottom: 8px; }
+#shopify-section-{{ section.id }} .mechanism__step-title { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.3; }
+#shopify-section-{{ section.id }} .mechanism__step-text { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+#shopify-section-{{ section.id }} .mechanism__step-highlight { display: flex; align-items: flex-start; gap: 12px; background: var(--cream); border-radius: var(--radius); padding: 16px 20px; margin-top: 20px; }
+#shopify-section-{{ section.id }} .mechanism__step-highlight-icon { flex-shrink: 0; width: 24px; height: 24px; background: var(--brand-deep); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.7rem; font-weight: 700; margin-top: 2px; }
+#shopify-section-{{ section.id }} .mechanism__step-highlight-text { font-size: 0.9rem; color: var(--text-primary); line-height: 1.6; }
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .mechanism__grid, #shopify-section-{{ section.id }} .mechanism__grid--reverse { grid-template-columns: 1fr; gap: 40px; }
+  #shopify-section-{{ section.id }} .mechanism__grid--reverse { direction: ltr; }
+}
+</style>
+
+<section class="mechanism">
+  <div class="container">
+    <div class="mechanism__header reveal">
+      <span class="kicker">{{ section.settings.kicker | escape }}</span>
+      <h2 class="headline-lg">{{ section.settings.heading | escape }}</h2>
+      <p class="subhead subhead--centered">{{ section.settings.subheading | escape }}</p>
+    </div>
+
+    {% for block in section.blocks %}
+      {% assign grid_class = block.settings.reverse_layout | default: false | times: 1 %}
+      {% if grid_class == 1 %}
+        <div class="mechanism__grid mechanism__grid--reverse reveal">
+      {% else %}
+        <div class="mechanism__grid reveal">
+      {% endif %}
+        <div class="mechanism__visual">
+          {% if block.settings.image %}
+            {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.image.alt }}
+          {% else %}
+            <div class="mechanism__visual-number">{{ block.settings.step_number | escape }}</div>
+            <div class="mechanism__visual-icon">{{ block.settings.icon | escape }}</div>
+          {% endif %}
+        </div>
+        <div>
+          <div class="mechanism__step-kicker">{{ block.settings.kicker | escape }}</div>
+          <h3 class="mechanism__step-title">{{ block.settings.title | escape }}</h3>
+          <p class="mechanism__step-text">{{ block.settings.text_1 | escape }}</p>
+          <p class="mechanism__step-text">{{ block.settings.text_2 | escape }}</p>
+          {% if block.settings.highlight_text %}
+            <div class="mechanism__step-highlight">
+              <div class="mechanism__step-highlight-icon">✓</div>
+              <p class="mechanism__step-highlight-text">{{ block.settings.highlight_text | escape }}</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "class": "nuracom-mechanism-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "The Innovations"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Three Innovations That Work Together"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Each solves a critical part of the drying problem. Together, they solve the entire thing."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mechanism_step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "Step Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon/Emoji",
+          "default": "🌀"
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Kicker",
+          "default": "Innovation One"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Turbo-Fan Forced Airflow"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "Text Block 1",
+          "default": "Unlike passive racks that rely on still air to slowly evaporate moisture, Nuracom uses up to 6 ultra-silent turbo fans to force a constant stream of air through your garments. This mimics nature's most effective drying method — a steady breeze — but indoors, on demand, regardless of what's happening outside."
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Text Block 2",
+          "default": "The result is dramatically faster drying without the heat damage of a tumble dryer. Your delicates stay intact. Your colours stay true. And your clothes are dry in hours, not days."
+        },
+        {
+          "type": "textarea",
+          "id": "highlight_text",
+          "label": "Highlight/Key Difference",
+          "default": "Key difference: Forced airflow dries clothes up to 2x faster than passive air drying, while using a fraction of the energy of a tumble dryer."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image (Optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse_layout",
+          "label": "Reverse Layout (Image on right)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        {
+          "type": "mechanism_step",
+          "settings": {
+            "step_number": "01",
+            "icon": "🌀",
+            "kicker": "Innovation One",
+            "title": "Turbo-Fan Forced Airflow",
+            "text_1": "Unlike passive racks that rely on still air to slowly evaporate moisture, Nuracom uses up to 6 ultra-silent turbo fans to force a constant stream of air through your garments. This mimics nature's most effective drying method — a steady breeze — but indoors, on demand, regardless of what's happening outside.",
+            "text_2": "The result is dramatically faster drying without the heat damage of a tumble dryer. Your delicates stay intact. Your colours stay true. And your clothes are dry in hours, not days.",
+            "highlight_text": "Key difference: Forced airflow dries clothes up to 2x faster than passive air drying, while using a fraction of the energy of a tumble dryer.",
+            "reverse_layout": false
+          }
+        },
+        {
+          "type": "mechanism_step",
+          "settings": {
+            "step_number": "02",
+            "icon": "▲",
+            "kicker": "Innovation Two",
+            "title": "Ceiling-Mount Heat Capture",
+            "text_1": "Hot air rises. It's basic physics, and Nuracom uses it to your advantage. When your rack lifts to ceiling height with one touch, your clothes sit in the warmest zone of any room — where temperatures can be 3–5°C higher than floor level.",
+            "text_2": "Combined with the turbo-fan airflow, this creates an optimal drying environment that works with your home's natural convection currents. No extra heating needed. No energy wasted. Just smart engineering.",
+            "highlight_text": "Key difference: Ceiling mounting utilises wasted warm air that already exists in your home, eliminating the need for energy-hungry heating elements.",
+            "reverse_layout": true
+          }
+        },
+        {
+          "type": "mechanism_step",
+          "settings": {
+            "step_number": "03",
+            "icon": "✨",
+            "kicker": "Innovation Three",
+            "title": "UV Disinfection & Hygiene Control",
+            "text_1": "Drying clothes isn't just about removing moisture — it's about making them genuinely clean. Nuracom's UV disinfection system (Aero and Stratos models) eliminates bacteria and odour-causing microorganisms during the drying process. The Stratos goes even further with negative ion technology that actively removes dust mites.",
+            "text_2": "This means your clothes come off the rack not just dry, but hygienically clean. No musty smell. No hidden bacteria. Just fresh, ready-to-wear clothing, every single time.",
+            "highlight_text": "Key difference: UV disinfection and negative ion tech mean your clothes are cleaner coming off a Nuracom than out of most tumble dryers.",
+            "reverse_layout": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

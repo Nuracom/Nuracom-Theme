@@ -1,0 +1,229 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container--narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-accent); margin-bottom: 12px; display: block; }
+.headline-xl { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 24px; }
+.headline-lg { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; color: var(--navy); margin-bottom: 20px; }
+.subhead { font-size: clamp(1.05rem, 1.5vw, 1.2rem); color: var(--text-secondary); line-height: 1.7; max-width: 640px; }
+.subhead--centered { margin-left: auto; margin-right: auto; }
+.body-text { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; border: none; transition: all 0.3s ease; font-family: inherit; }
+.btn--primary { background: var(--brand-deep); color: var(--white); }
+.btn--primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(94,4,4,0.3); }
+.btn--outline { background: transparent; color: var(--brand-deep); border: 2px solid var(--brand-deep); }
+.btn--outline:hover { background: var(--brand-deep); color: var(--white); }
+.btn--lg { padding: 18px 48px; font-size: 1.1rem; border-radius: 10px; }
+.btn-arrow { transition: transform 0.3s ease; }
+.btn:hover .btn-arrow { transform: translateX(4px); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+#shopify-section-{{ section.id }} .hero { padding: calc(var(--section-pad) + 64px) 0 var(--section-pad); background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%); position: relative; overflow: hidden; }
+#shopify-section-{{ section.id }} .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(94,4,4,0.04) 0%, transparent 70%); }
+#shopify-section-{{ section.id }} .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+#shopify-section-{{ section.id }} .hero__content { position: relative; z-index: 2; }
+#shopify-section-{{ section.id }} .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--warm-gray); border-radius: 100px; padding: 6px 16px 6px 8px; font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 24px; }
+#shopify-section-{{ section.id }} .hero__badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse-hero-{{ section.id }} 2s infinite; }
+#shopify-section-{{ section.id }} @keyframes pulse-hero-{{ section.id }} { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+#shopify-section-{{ section.id }} .hero__headline { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 5.5vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--navy); margin-bottom: 20px; }
+#shopify-section-{{ section.id }} .hero__headline em { font-style: italic; color: var(--brand-deep); }
+#shopify-section-{{ section.id }} .hero__sub { font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px; max-width: 500px; }
+#shopify-section-{{ section.id }} .hero__ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+#shopify-section-{{ section.id }} .hero__proof { display: flex; align-items: center; gap: 16px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--warm-gray); }
+#shopify-section-{{ section.id }} .hero__avatars { display: flex; }
+#shopify-section-{{ section.id }} .hero__avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--white); margin-left: -10px; background: var(--warm-gray); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); }
+#shopify-section-{{ section.id }} .hero__avatar:first-child { margin-left: 0; }
+#shopify-section-{{ section.id }} .hero__proof-text { font-size: 0.85rem; color: var(--text-secondary); }
+#shopify-section-{{ section.id }} .hero__proof-text strong { color: var(--text-primary); }
+#shopify-section-{{ section.id }} .hero__visual { position: relative; }
+#shopify-section-{{ section.id }} .hero__image-wrap { background: linear-gradient(135deg, var(--warm-gray) 0%, #d4cfc9 100%); border-radius: var(--radius-lg); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
+#shopify-section-{{ section.id }} .hero__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+#shopify-section-{{ section.id }} .hero__float-card { position: absolute; background: var(--white); border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow-md); }
+#shopify-section-{{ section.id }} .hero__float-card--cost { bottom: -16px; left: -16px; display: flex; align-items: center; gap: 12px; }
+#shopify-section-{{ section.id }} .hero__float-card--cost .icon { width: 40px; height: 40px; background: #dcfce7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+#shopify-section-{{ section.id }} .hero__float-card--cost .label { font-size: 0.75rem; color: var(--text-muted); }
+#shopify-section-{{ section.id }} .hero__float-card--cost .value { font-size: 1.1rem; font-weight: 700; color: #16a34a; }
+#shopify-section-{{ section.id }} .hero__float-card--rating { top: -12px; right: -12px; }
+#shopify-section-{{ section.id }} .hero__float-card--rating .stars { color: #f59e0b; font-size: 0.9rem; letter-spacing: 2px; }
+#shopify-section-{{ section.id }} .hero__float-card--rating .label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  #shopify-section-{{ section.id }} .hero__visual { order: -1; }
+}
+
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .hero__ctas { flex-direction: column; }
+  #shopify-section-{{ section.id }} .hero__ctas .btn { width: 100%; justify-content: center; }
+}
+</style>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__content reveal">
+        <span class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          {{ section.settings.badge_text | escape }}
+        </span>
+        <h1 class="hero__headline">{{ section.settings.headline }}</h1>
+        <p class="hero__sub">{{ section.settings.subheading | escape }}</p>
+        <div class="hero__ctas">
+          <a href="{{ section.settings.primary_cta_link }}" class="btn btn--primary btn--lg reveal reveal-delay-1">
+            {{ section.settings.primary_cta_text | escape }} <span class="btn-arrow">→</span>
+          </a>
+          <a href="{{ section.settings.secondary_cta_link }}" class="btn btn--outline btn--lg reveal reveal-delay-2">
+            {{ section.settings.secondary_cta_text | escape }}
+          </a>
+        </div>
+        <div class="hero__proof reveal reveal-delay-3">
+          <div class="hero__avatars">
+            <div class="hero__avatar" style="background:#e8d5d0;">J</div>
+            <div class="hero__avatar" style="background:#d0dbe8;">S</div>
+            <div class="hero__avatar" style="background:#d5e8d0;">M</div>
+            <div class="hero__avatar" style="background:#e8e0d0;">K</div>
+          </div>
+          <div class="hero__proof-text">
+            <strong>{{ section.settings.proof_heading | escape }}</strong><br>
+            {{ section.settings.proof_subtext | escape }}
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual reveal reveal-delay-1">
+        <div class="hero__image-wrap">
+          {% if section.settings.hero_image %}
+            {{ section.settings.hero_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.hero_image.alt }}
+          {% endif %}
+        </div>
+        <div class="hero__float-card hero__float-card--cost">
+          <div class="icon">↓</div>
+          <div>
+            <div class="label">Cost per use</div>
+            <div class="value">{{ section.settings.cost_per_use | escape }}</div>
+          </div>
+        </div>
+        <div class="hero__float-card hero__float-card--rating">
+          <div class="stars">{{ section.settings.rating_text | escape }}</div>
+          <div class="label">4.9 avg. rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "tag": "section",
+  "class": "nuracom-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Australia's #1 Smart Drying System"
+    },
+    {
+      "type": "richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "<p>Stop Letting the Weather<br>Decide When You Do <em>Laundry.</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Nuracom's smart drying technology dries your clothes indoors in hours, not days — using turbo-fan airflow that costs under $1 per use. No dryer. No weather app. No stress."
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_text",
+      "label": "Primary Button Text",
+      "default": "See the Range"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "label": "Secondary Button Text",
+      "default": "How It Works"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "cost_per_use",
+      "label": "Cost Per Use",
+      "default": "Under $1"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Stars",
+      "default": "★★★★★"
+    },
+    {
+      "type": "text",
+      "id": "proof_heading",
+      "label": "Proof Heading",
+      "default": "Trusted by Australian families"
+    },
+    {
+      "type": "text",
+      "id": "proof_subtext",
+      "label": "Proof Subtext",
+      "default": "Hundreds of 5-star reviews nationwide"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}

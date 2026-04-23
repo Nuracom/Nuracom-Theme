@@ -1,0 +1,62 @@
+{
+  "name": "Nuracom Landing Page",
+  "sections": {
+    "hero": {
+      "type": "nuracom-hero",
+      "settings": {}
+    },
+    "problem-agitation": {
+      "type": "nuracom-problem-agitation",
+      "settings": {}
+    },
+    "shift": {
+      "type": "nuracom-shift",
+      "settings": {}
+    },
+    "mechanism": {
+      "type": "nuracom-mechanism",
+      "settings": {}
+    },
+    "products": {
+      "type": "nuracom-products",
+      "settings": {}
+    },
+    "cost-comparison": {
+      "type": "nuracom-cost-comparison",
+      "settings": {}
+    },
+    "installation": {
+      "type": "nuracom-installation",
+      "settings": {}
+    },
+    "social-proof": {
+      "type": "nuracom-social-proof",
+      "settings": {}
+    },
+    "warranty-trust": {
+      "type": "nuracom-warranty-trust",
+      "settings": {}
+    },
+    "faq": {
+      "type": "nuracom-faq",
+      "settings": {}
+    },
+    "final-cta": {
+      "type": "nuracom-final-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "problem-agitation",
+    "shift",
+    "mechanism",
+    "products",
+    "cost-comparison",
+    "installation",
+    "social-proof",
+    "warranty-trust",
+    "faq",
+    "final-cta"
+  ]
+}

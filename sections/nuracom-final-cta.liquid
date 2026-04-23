@@ -1,0 +1,335 @@
+{% comment %}
+Nuracom Final CTA Section
+A compelling call-to-action section with headline, supporting text, buttons, and assurance items.
+Includes IntersectionObserver for reveal animations.
+{% endcomment %}
+
+<section id="shopify-section-{{ section.id }}" class="final-cta">
+  <style>
+    :root {
+      --section-pad: 80px;
+      --navy: #1a3a52;
+      --brand-deep: #2d5f3f;
+      --white: #ffffff;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #6b7280;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #shopify-section-{{ section.id }} .final-cta {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__headline em {
+      color: var(--brand-deep);
+      font-style: italic;
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    #shopify-section-{{ section.id }} .btn--primary {
+      background: var(--brand-deep);
+      color: var(--white);
+    }
+
+    #shopify-section-{{ section.id }} .btn--primary:hover {
+      background: #1f4630;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(45, 95, 63, 0.2);
+    }
+
+    #shopify-section-{{ section.id }} .btn--outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    #shopify-section-{{ section.id }} .btn--outline:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    #shopify-section-{{ section.id }} .btn--lg {
+      padding: 16px 40px;
+      font-size: 1.05rem;
+    }
+
+    #shopify-section-{{ section.id }} .btn-arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    #shopify-section-{{ section.id }} .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__assurance {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__assurance-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    #shopify-section-{{ section.id }} .final-cta__assurance-icon {
+      color: #16a34a;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      #shopify-section-{{ section.id }} .final-cta {
+        padding: 60px 0;
+      }
+
+      #shopify-section-{{ section.id }} .final-cta__buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      #shopify-section-{{ section.id }} .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      #shopify-section-{{ section.id }} .final-cta__assurance {
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #shopify-section-{{ section.id }} .final-cta__headline {
+        font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+        margin-bottom: 12px;
+      }
+
+      #shopify-section-{{ section.id }} .final-cta__text {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+
+  <div class="final-cta__inner reveal">
+    <h2 class="final-cta__headline">
+      {{ section.settings.headline }}
+      {% if section.settings.emphasized_text %}
+        <em>{{ section.settings.emphasized_text }}</em>
+      {% endif %}
+    </h2>
+
+    {% if section.settings.subtext %}
+      <p class="final-cta__text">{{ section.settings.subtext }}</p>
+    {% endif %}
+
+    <div class="final-cta__buttons">
+      <a href="{{ section.settings.primary_button_url }}" class="btn btn--primary btn--lg">
+        {{ section.settings.primary_button_label }}
+        <span class="btn-arrow">&rarr;</span>
+      </a>
+      <a href="{{ section.settings.secondary_button_url }}" class="btn btn--outline btn--lg">
+        {{ section.settings.secondary_button_label }}
+      </a>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="final-cta__assurance">
+        {% for block in section.blocks %}
+          <span class="final-cta__assurance-item" {{ block.shopify_attributes }}>
+            <span class="final-cta__assurance-icon">✓</span>
+            {{ block.settings.assurance_text }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const revealElement = document.querySelector('#shopify-section-{{ section.id }} .reveal');
+    if (revealElement) {
+      observer.observe(revealElement);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "tag": "section",
+  "class": "nuracom-final-cta-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Ready to Never Worry About"
+    },
+    {
+      "type": "text",
+      "id": "emphasized_text",
+      "label": "Emphasized Text (em tag)",
+      "default": "Drying Laundry Again?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext / Description",
+      "default": "Join hundreds of Australian families who've permanently solved indoor drying. One purchase. One install. A lifetime of perfect dries."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Primary Button Label",
+      "default": "Shop the Range"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_url",
+      "label": "Primary Button URL",
+      "default": "#products"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary Button Label",
+      "default": "See How It Works"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_url",
+      "label": "Secondary Button URL",
+      "default": "#mechanism"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "assurance_item",
+      "name": "Assurance Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "assurance_text",
+          "label": "Assurance Text",
+          "default": "Free Australian shipping"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Final CTA",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "assurance_item",
+          "settings": {
+            "assurance_text": "Free Australian shipping"
+          }
+        },
+        {
+          "type": "assurance_item",
+          "settings": {
+            "assurance_text": "Up to 5-year warranty"
+          }
+        },
+        {
+          "type": "assurance_item",
+          "settings": {
+            "assurance_text": "Under $1 per use"
+          }
+        },
+        {
+          "type": "assurance_item",
+          "settings": {
+            "assurance_text": "DIY install in 30 mins"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

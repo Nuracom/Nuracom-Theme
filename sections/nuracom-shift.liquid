@@ -1,0 +1,95 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container--narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+#shopify-section-{{ section.id }} .shift { padding: var(--section-pad) 0; background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
+#shopify-section-{{ section.id }} .shift::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(94,4,4,0.15) 0%, transparent 60%); }
+#shopify-section-{{ section.id }} .shift__inner { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; text-align: center; }
+#shopify-section-{{ section.id }} .shift__headline { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
+#shopify-section-{{ section.id }} .shift__headline em { color: #f8a89a; font-style: italic; }
+#shopify-section-{{ section.id }} .shift__text { font-size: 1.1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 16px; }
+#shopify-section-{{ section.id }} .shift__divider { width: 60px; height: 3px; background: var(--brand-accent); margin: 40px auto; border-radius: 2px; }
+</style>
+
+<section class="shift" id="shift">
+  <div class="container">
+    <div class="shift__inner reveal">
+      <h2 class="shift__headline">{{ section.settings.headline }}</h2>
+      <p class="shift__text">{{ section.settings.text_1 | escape }}</p>
+      <p class="shift__text">{{ section.settings.text_2 | escape }}</p>
+      <div class="shift__divider"></div>
+      <p class="shift__text">{{ section.settings.text_3 | escape }}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Shift / Transformation",
+  "tag": "section",
+  "class": "nuracom-shift-section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "<p>What if drying clothes indoors was <em>actually solved?</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Text Block 1",
+      "default": "Not managed. Not tolerated. Not worked around with cheap racks and crossed fingers."
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Text Block 2",
+      "default": "What if there was a system that dried your clothes in hours — every time, rain or shine — using less power than a light bulb? A system you could mount once, operate with one touch, and never think about again?"
+    },
+    {
+      "type": "textarea",
+      "id": "text_3",
+      "label": "Text Block 3",
+      "default": "There is. And the technology behind it is simpler than you'd expect."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shift / Transformation"
+    }
+  ]
+}
+{% endschema %}

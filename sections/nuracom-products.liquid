@@ -1,0 +1,439 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.headline-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.subhead {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.subhead--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn--primary {
+  background: var(--brand-deep);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(94,4,4,0.3);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+#shopify-section-{{ section.id }} .products {
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+}
+
+#shopify-section-{{ section.id }} .products__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+#shopify-section-{{ section.id }} .products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#shopify-section-{{ section.id }} .product-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+#shopify-section-{{ section.id }} .product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+#shopify-section-{{ section.id }} .product-card--featured {
+  border-color: var(--brand-deep);
+}
+
+#shopify-section-{{ section.id }} .product-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--brand-deep);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+#shopify-section-{{ section.id }} .product-card__image {
+  padding: 32px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+#shopify-section-{{ section.id }} .product-card__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+#shopify-section-{{ section.id }} .product-card__content {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#shopify-section-{{ section.id }} .product-card__name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+#shopify-section-{{ section.id }} .product-card__tagline {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+#shopify-section-{{ section.id }} .product-card__features {
+  list-style: none;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+#shopify-section-{{ section.id }} .product-card__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid #f5f2ee;
+}
+
+#shopify-section-{{ section.id }} .product-card__feature:last-child {
+  border-bottom: none;
+}
+
+#shopify-section-{{ section.id }} .product-card__check {
+  color: #16a34a;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+#shopify-section-{{ section.id }} .product-card__specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#shopify-section-{{ section.id }} .product-card__spec {
+  text-align: center;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#shopify-section-{{ section.id }} .product-card__spec-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+#shopify-section-{{ section.id }} .product-card__spec-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#shopify-section-{{ section.id }} .product-card__cta {
+  margin-top: auto;
+}
+
+#shopify-section-{{ section.id }} .product-card__cta .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .products__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
+
+<section class="products" id="shopify-section-{{ section.id }}">
+  <div class="container">
+    <div class="products__header reveal">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h2 class="headline-lg">{{ section.settings.heading }}</h2>
+      <p class="subhead subhead--centered">{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="products__grid">
+      {% for block in section.blocks %}
+        <div class="product-card {% if block.settings.featured %}product-card--featured{% endif %} reveal reveal-delay-{{ forloop.index }}">
+          {% if block.settings.badge_text %}
+            <div class="product-card__badge">{{ block.settings.badge_text }}</div>
+          {% endif %}
+
+          <div class="product-card__image">
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 300 | image_tag }}
+            {% endif %}
+          </div>
+
+          <div class="product-card__content">
+            <h3 class="product-card__name">{{ block.settings.name }}</h3>
+            <p class="product-card__tagline">{{ block.settings.tagline }}</p>
+
+            {% if block.settings.fans_count or block.settings.capacity %}
+              <div class="product-card__specs">
+                {% if block.settings.fans_count %}
+                  <div class="product-card__spec">
+                    <div class="product-card__spec-value">{{ block.settings.fans_count }}</div>
+                    <div class="product-card__spec-label">Fans</div>
+                  </div>
+                {% endif %}
+                {% if block.settings.capacity %}
+                  <div class="product-card__spec">
+                    <div class="product-card__spec-value">{{ block.settings.capacity }}</div>
+                    <div class="product-card__spec-label">Capacity</div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if block.settings.features %}
+              <ul class="product-card__features">
+                {% assign feature_list = block.settings.features | split: newline %}
+                {% for feature in feature_list %}
+                  {% if feature != blank %}
+                    <li class="product-card__feature">
+                      <span class="product-card__check">✓</span>
+                      <span>{{ feature | strip }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <div class="product-card__cta">
+              <a href="{{ block.settings.button_url }}" class="btn btn--primary">{{ block.settings.button_text }}</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "tag": "section",
+  "class": "nuracom-products-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Our Range"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Three Systems for Every Home"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "From trendsetter to state-of-the-art, find the Nuracom that fits your lifestyle and space."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Product Name",
+          "default": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "Product tagline"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "fans_count",
+          "label": "Number of Fans",
+          "default": "2"
+        },
+        {
+          "type": "text",
+          "id": "capacity",
+          "label": "Capacity (e.g., 30kg)",
+          "default": "30kg"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Feature this product",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text (leave blank to hide)"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (one per line)",
+          "default": "Feature 1\nFeature 2\nFeature 3"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "View Product"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Showcase"
+    }
+  ]
+}
+{% endschema %}

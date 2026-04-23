@@ -1,0 +1,319 @@
+<style>
+:root {
+  --brand-deep: #5E0404;
+  --brand-dark: #801f0a;
+  --brand-accent: #a8321a;
+  --navy: #101a32;
+  --cream: #f8f5f1;
+  --warm-gray: #e8e3dd;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1120px;
+  --section-pad: clamp(60px, 8vw, 120px);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.headline-lg {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.subhead {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.subhead--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#shopify-section-{{ section.id }} .proof {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+#shopify-section-{{ section.id }} .proof__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+#shopify-section-{{ section.id }} .proof__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+#shopify-section-{{ section.id }} .proof__stat {
+  text-align: center;
+  padding: 24px;
+}
+
+#shopify-section-{{ section.id }} .proof__stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+#shopify-section-{{ section.id }} .proof__stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#shopify-section-{{ section.id }} .proof__testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#shopify-section-{{ section.id }} .testimonial {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+#shopify-section-{{ section.id }} .testimonial__stars {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+#shopify-section-{{ section.id }} .testimonial__text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+  font-style: italic;
+}
+
+#shopify-section-{{ section.id }} .testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--warm-gray);
+}
+
+#shopify-section-{{ section.id }} .testimonial__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--warm-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+#shopify-section-{{ section.id }} .testimonial__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+#shopify-section-{{ section.id }} .testimonial__location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+#shopify-section-{{ section.id }} .testimonial__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  #shopify-section-{{ section.id }} .proof__testimonials {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #shopify-section-{{ section.id }} .proof__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #shopify-section-{{ section.id }} .proof__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+
+<section class="proof" id="shopify-section-{{ section.id }}">
+  <div class="container">
+    <div class="proof__header reveal">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h2 class="headline-lg">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="proof__stats">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          <div class="proof__stat reveal">
+            <div class="proof__stat-number">{{ block.settings.number }}</div>
+            <div class="proof__stat-label">{{ block.settings.label }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="proof__testimonials">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <div class="testimonial reveal">
+            <div class="testimonial__stars">★★★★★</div>
+            <p class="testimonial__text">{{ block.settings.quote }}</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">{{ block.settings.initials }}</div>
+              <div class="testimonial__meta">
+                <div class="testimonial__name">{{ block.settings.name }}</div>
+                <div class="testimonial__location">{{ block.settings.location }}</div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Social Proof",
+  "tag": "section",
+  "class": "nuracom-social-proof-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "Loved by"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by Happy Homes Across Australia"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "4.9"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Average Rating"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Testimonial quote goes here"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "City, State"
+        },
+        {
+          "type": "text",
+          "id": "initials",
+          "label": "Initials",
+          "default": "AB"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof"
+    }
+  ]
+}
+{% endschema %}
