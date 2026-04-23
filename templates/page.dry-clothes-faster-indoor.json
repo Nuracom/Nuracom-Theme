@@ -192,7 +192,7 @@
             "highlight_style": "popular",
             "popular_label": "Most Popular",
             "cta_text": "View Aero",
-            "cta_url": "shopify://products/nuracom-breeze-autonomous-dryer-copy"
+            "cta_url": "shopify://products/nuracom-aero"
           }
         },
         "model_FbtFFx": {
@@ -830,7 +830,7 @@
             "price": "$1,499",
             "price_note": "Free Shipping to Metro Areas. Easy Install.",
             "btn_label": "Shop Aero",
-            "link": "shopify://products/nuracom-breeze-autonomous-dryer-copy",
+            "link": "shopify://products/nuracom-aero",
             "badge": "Most Popular",
             "featured": true
           }
