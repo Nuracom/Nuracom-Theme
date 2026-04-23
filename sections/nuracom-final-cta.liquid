@@ -66,7 +66,27 @@
         {% endif %}
       </div>
 
-      {% if section.blocks.size > 0 %}
+      {%- comment -%} Render checkmarks — prefer section settings, fall back to blocks {%- endcomment -%}
+      {%- assign has_settings_checks = false -%}
+      {%- for i in (1..8) -%}
+        {%- assign key = 'check_' | append: i -%}
+        {%- if section.settings[key] != blank -%}{%- assign has_settings_checks = true -%}{%- endif -%}
+      {%- endfor -%}
+
+      {% if has_settings_checks %}
+        <div class="nfcta__assurance">
+          {% for i in (1..8) %}
+            {% assign key = 'check_' | append: i %}
+            {% assign v = section.settings[key] %}
+            {% if v != blank %}
+              <span class="nfcta__assurance-item">
+                <span class="nfcta__assurance-icon">&check;</span>
+                {{ v }}
+              </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% elsif section.blocks.size > 0 %}
         <div class="nfcta__assurance">
           {% for block in section.blocks %}
             <span class="nfcta__assurance-item" {{ block.shopify_attributes }}>
@@ -106,6 +126,15 @@
     { "type": "url", "id": "primary_btn_url", "label": "Primary button URL" },
     { "type": "text", "id": "secondary_btn_text", "label": "Secondary button text", "default": "See How It Works" },
     { "type": "url", "id": "secondary_btn_url", "label": "Secondary button URL" },
+    { "type": "header", "content": "Green-tick checkmark chips", "info": "Each non-empty field below renders as a green tick + text chip under the buttons. Leave blank to hide." },
+    { "type": "text", "id": "check_1", "label": "Checkmark 1", "default": "Free Australian shipping" },
+    { "type": "text", "id": "check_2", "label": "Checkmark 2", "default": "Up to 5-year warranty" },
+    { "type": "text", "id": "check_3", "label": "Checkmark 3", "default": "Under $1 per use" },
+    { "type": "text", "id": "check_4", "label": "Checkmark 4", "default": "DIY install in 30 mins" },
+    { "type": "text", "id": "check_5", "label": "Checkmark 5 (optional)" },
+    { "type": "text", "id": "check_6", "label": "Checkmark 6 (optional)" },
+    { "type": "text", "id": "check_7", "label": "Checkmark 7 (optional)" },
+    { "type": "text", "id": "check_8", "label": "Checkmark 8 (optional)" },
     { "type": "header", "content": "Colours" },
     { "type": "color", "id": "bg_color", "label": "Section background", "default": "#ffffff" },
     { "type": "color", "id": "brand_deep", "label": "Brand deep", "default": "#5E0404" },

@@ -31,11 +31,22 @@
   #shopify-section-{{ section.id }} .ninst__step-number { width: 44px; height: 44px; border-radius: 12px; background: var(--brand-deep); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
   #shopify-section-{{ section.id }} .ninst__step-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 0 0 4px; }
   #shopify-section-{{ section.id }} .ninst__step-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
-  #shopify-section-{{ section.id }} .ninst__visual { background: linear-gradient(135deg, var(--warm-gray), #d4cfc9); border-radius: var(--radius-lg); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+  #shopify-section-{{ section.id }} .ninst__visual-wrap { display: flex; flex-direction: column; gap: 16px; }
+  #shopify-section-{{ section.id }} .ninst__visual { background: linear-gradient(135deg, var(--warm-gray), #d4cfc9); border-radius: var(--radius-lg); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; position: relative; }
   #shopify-section-{{ section.id }} .ninst__visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #shopify-section-{{ section.id }} .ninst__visual iframe,
+  #shopify-section-{{ section.id }} .ninst__visual video { width: 100%; height: 100%; border: 0; display: block; }
   #shopify-section-{{ section.id }} .ninst__visual-inner { text-align: center; padding: 40px; }
   #shopify-section-{{ section.id }} .ninst__visual-icon { font-size: 4rem; margin-bottom: 12px; }
   #shopify-section-{{ section.id }} .ninst__visual-text { font-size: 0.9rem; color: var(--text-muted); }
+  #shopify-section-{{ section.id }} .ninst__video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+  #shopify-section-{{ section.id }} .ninst__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 78px; height: 78px; border-radius: 50%; background: rgba(255,255,255,0.94); display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: none; transition: transform 0.2s ease; box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+  #shopify-section-{{ section.id }} .ninst__visual:hover .ninst__play { transform: translate(-50%,-50%) scale(1.08); }
+  #shopify-section-{{ section.id }} .ninst__play svg { color: var(--brand-deep); margin-left: 4px; }
+  #shopify-section-{{ section.id }} .ninst__video-cta { display: inline-flex; align-self: center; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; background: transparent; color: var(--brand-deep); border: 2px solid var(--brand-deep); border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.25s ease; font-family: inherit; }
+  #shopify-section-{{ section.id }} .ninst__video-cta:hover { background: var(--brand-deep); color: var(--white); transform: translateY(-2px); }
+  #shopify-section-{{ section.id }} .ninst__video-cta svg { transition: transform 0.25s ease; }
+  #shopify-section-{{ section.id }} .ninst__video-cta:hover svg { transform: translateX(3px); }
   #shopify-section-{{ section.id }} .ninst__guarantee { display: flex; align-items: center; gap: 16px; background: var(--white); border-radius: var(--radius); padding: 20px 24px; margin-top: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
   #shopify-section-{{ section.id }} .ninst__guarantee-icon { font-size: 2rem; flex-shrink: 0; }
   #shopify-section-{{ section.id }} .ninst__guarantee-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
@@ -80,14 +91,32 @@
         {% endif %}
       </div>
 
-      <div class="ninst__visual ninst__reveal">
-        {% if section.settings.visual_image != blank %}
-          <img src="{{ section.settings.visual_image | image_url: width: 1000 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
-        {% else %}
-          <div class="ninst__visual-inner">
-            <div class="ninst__visual-icon">{{ section.settings.visual_icon }}</div>
-            <p class="ninst__visual-text">{{ section.settings.visual_placeholder_text }}</p>
-          </div>
+      <div class="ninst__visual-wrap ninst__reveal">
+        <div class="ninst__visual" {% if section.settings.video_url != blank %}data-video-url="{{ section.settings.video_url }}" onclick="ninstPlay_{{ section.id | replace: '-', '_' }}()"{% endif %}>
+          {% if section.settings.video_url != blank %}
+            {% if section.settings.video_poster != blank %}
+              <img class="ninst__video-poster" src="{{ section.settings.video_poster | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
+              <div class="ninst__play" aria-label="Play video">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            {% else %}
+              <iframe src="{{ section.settings.video_url }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            {% endif %}
+          {% elsif section.settings.visual_image != blank %}
+            <img src="{{ section.settings.visual_image | image_url: width: 1000 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
+          {% else %}
+            <div class="ninst__visual-inner">
+              <div class="ninst__visual-icon">{{ section.settings.visual_icon }}</div>
+              <p class="ninst__visual-text">{{ section.settings.visual_placeholder_text }}</p>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if section.settings.video_cta_text != blank and section.settings.video_cta_url != blank %}
+          <a href="{{ section.settings.video_cta_url }}" class="ninst__video-cta" target="_blank" rel="noopener">
+            {{ section.settings.video_cta_text }}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
         {% endif %}
       </div>
     </div>
@@ -104,6 +133,17 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function(el) { io.observe(el); });
   })();
+
+  {%- if section.settings.video_url != blank and section.settings.video_poster != blank -%}
+  function ninstPlay_{{ section.id | replace: '-', '_' }}() {
+    var wrap = document.querySelector('#shopify-section-{{ section.id }} .ninst__visual');
+    if (!wrap || wrap.dataset.played) return;
+    wrap.dataset.played = '1';
+    var url = wrap.getAttribute('data-video-url');
+    var sep = url.indexOf('?') > -1 ? '&' : '?';
+    wrap.innerHTML = '<iframe src="' + url + sep + 'autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  }
+  {%- endif -%}
 </script>
 
 {% schema %}
@@ -116,9 +156,15 @@
     { "type": "text", "id": "kicker", "label": "Kicker", "default": "Simple Setup" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Install It Yourself in Under 30 Minutes" },
     { "type": "textarea", "id": "body_text", "label": "Body text", "default": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom." },
-    { "type": "header", "content": "Visual panel" },
+    { "type": "header", "content": "Video block", "info": "Embed a YouTube / Vimeo install walkthrough. If empty, falls back to the image." },
+    { "type": "text", "id": "video_url", "label": "Video embed URL", "info": "Use the EMBED URL, e.g. https://www.youtube.com/embed/VIDEO_ID" },
+    { "type": "image_picker", "id": "video_poster", "label": "Video poster (click-to-play)", "info": "If set, shows a poster image with a play button. Clicking it loads the video with autoplay." },
+    { "type": "header", "content": "\"See full install guide\" button (below video)" },
+    { "type": "text", "id": "video_cta_text", "label": "Button text", "default": "See full install guide" },
+    { "type": "url", "id": "video_cta_url", "label": "Button URL (opens in new tab)", "info": "Paste a full YouTube / Vimeo URL — opens in new tab." },
+    { "type": "header", "content": "Fallback image (used if no video)" },
     { "type": "image_picker", "id": "visual_image", "label": "Installation image / screenshot" },
-    { "type": "text", "id": "visual_icon", "label": "Fallback icon (if no image)", "default": "🔧" },
+    { "type": "text", "id": "visual_icon", "label": "Fallback icon (if no video + no image)", "default": "🔧" },
     { "type": "text", "id": "visual_placeholder_text", "label": "Fallback caption", "default": "[Installation walkthrough image/video here]" },
     { "type": "header", "content": "Guarantee row" },
     { "type": "text", "id": "guarantee_icon", "label": "Guarantee icon (emoji)", "default": "📖" },

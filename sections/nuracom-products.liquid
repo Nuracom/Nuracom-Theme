@@ -28,8 +28,8 @@
   #shopify-section-{{ section.id }} .nprod__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   #shopify-section-{{ section.id }} .nprod__card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; border: 2px solid transparent; transition: all 0.3s ease; position: relative; }
   #shopify-section-{{ section.id }} .nprod__card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
-  #shopify-section-{{ section.id }} .nprod__card--featured { border-color: var(--brand-deep); }
-  #shopify-section-{{ section.id }} .nprod__badge { position: absolute; top: 16px; right: 16px; background: var(--brand-deep); color: var(--white); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 12px; border-radius: 6px; z-index: 2; }
+  #shopify-section-{{ section.id }} .nprod__card--featured { border-color: {{ section.settings.badge_color }}; }
+  #shopify-section-{{ section.id }} .nprod__badge { position: absolute; top: 16px; right: 16px; background: {{ section.settings.badge_color }}; color: {{ section.settings.badge_text_color }}; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 12px; border-radius: 6px; z-index: 2; }
   #shopify-section-{{ section.id }} .nprod__image { padding: 32px; background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%); display: flex; align-items: center; justify-content: center; min-height: 200px; }
   #shopify-section-{{ section.id }} .nprod__image img { max-width: 100%; height: auto; display: block; }
   #shopify-section-{{ section.id }} .nprod__image-placeholder { font-size: 3.5rem; opacity: 0.6; }
@@ -179,7 +179,9 @@
     { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Three models. One guarantee: a perfect dry, every time." },
     { "type": "header", "content": "Colours" },
     { "type": "color", "id": "bg_color", "label": "Section background", "default": "#f8f5f1" },
-    { "type": "color", "id": "brand_deep", "label": "Brand deep (featured + CTAs)", "default": "#5E0404" },
+    { "type": "color", "id": "brand_deep", "label": "Brand deep (CTAs)", "default": "#5E0404" },
+    { "type": "color", "id": "badge_color", "label": "Badge + featured card border", "default": "#5E0404", "info": "Colour of the \"Most Popular\" badge and the featured card's coloured border." },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text colour", "default": "#ffffff" },
     { "type": "color", "id": "brand_dark", "label": "Brand dark (CTA hover)", "default": "#801f0a" },
     { "type": "color", "id": "brand_accent", "label": "Kicker colour", "default": "#a8321a" },
     { "type": "color", "id": "navy", "label": "Navy (titles)", "default": "#101a32" },
