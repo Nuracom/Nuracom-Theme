@@ -17,7 +17,7 @@
         "subheadline": "Nuracom's smart drying technology dries your clothes indoors in hours, not days — using turbo-fan airflow that costs under $1 per use. No dryer. No weather app. No stress.",
         "primary_btn_text": "See the Range",
         "primary_btn_url": "",
-        "secondary_btn_text": "How It Works",
+        "secondary_btn_text": "Real  $ Savings",
         "secondary_btn_url": "",
         "show_proof": true,
         "proof_headline": "Trusted by Australian families",
@@ -49,75 +49,6 @@
         "text_muted": "#888888",
         "white": "#ffffff",
         "badge_dot_color": "#22c55e"
-      }
-    },
-    "problem_nlr2": {
-      "type": "nuracom-problem-agitation",
-      "blocks": {
-        "pc_1": {
-          "type": "problem_card",
-          "settings": {
-            "icon": "⊗",
-            "title": "Your Laundry Schedule Is Controlled by the Weather",
-            "description": "You check the forecast before every wash. You rearrange your day around drying windows. And when rain hits mid-dry, you're rewashing a full load that now smells like damp towels. Your time is being stolen by something completely out of your control.",
-            "quote": "I'm so sick of planning my entire week around whether it's going to rain."
-          }
-        },
-        "pc_2": {
-          "type": "problem_card",
-          "settings": {
-            "icon": "⚡",
-            "title": "The Dryer Costs a Fortune (And Ruins Your Clothes)",
-            "description": "At $2–$3 per load, your tumble dryer is quietly draining hundreds of dollars a year. And the clothes it doesn't shrink, it fades. You're paying premium prices for a machine that actively damages your wardrobe. That's not a solution — it's a tax on bad weather.",
-            "quote": "The dryer shrunk my favourite jumper and I'm still annoyed about it. But what choice do I have?"
-          }
-        },
-        "pc_3": {
-          "type": "problem_card",
-          "settings": {
-            "icon": "💨",
-            "title": "Damp Clothes, Damp House, Damp Mood",
-            "description": "Clothes draped over every surface. A clothes horse blocking the hallway. That faint musty smell that never quite leaves. Indoor drying without a proper system doesn't just look bad — it's creating humidity that feeds mould, triggers allergies, and makes your home uncomfortable.",
-            "quote": "Our apartment looks like a refugee camp half the week with clothes hanging everywhere."
-          }
-        }
-      },
-      "block_order": [
-        "pc_1",
-        "pc_2",
-        "pc_3"
-      ],
-      "settings": {
-        "kicker": "Sound familiar?",
-        "heading": "The Three Laundry Problems Every Australian Knows",
-        "subheading": "You've been tolerating these for years. But they're costing you more than you think.",
-        "bg_color": "#ffffff",
-        "brand_deep": "#5e0404",
-        "brand_accent": "#a8321a",
-        "navy": "#101a32",
-        "cream": "#f8f5f1",
-        "warm_gray": "#e8e3dd",
-        "text_secondary": "#555555",
-        "text_muted": "#888888",
-        "white": "#ffffff",
-        "icon_bg_1": "#fef2f2",
-        "icon_bg_2": "#fff7ed",
-        "icon_bg_3": "#fefce8"
-      }
-    },
-    "shift_nlr2": {
-      "type": "nuracom-shift",
-      "settings": {
-        "headline": "<p>What if drying clothes indoors was <em>actually solved?</em></p>",
-        "text_1": "Not managed. Not tolerated. Not worked around with cheap racks and crossed fingers.",
-        "text_2": "What if there was a system that dried your clothes in hours — every time, rain or shine — using less power than a light bulb? A system you could mount once, operate with one touch, and never think about again?",
-        "show_divider": true,
-        "text_3": "There is. And the technology behind it is simpler than you'd expect.",
-        "navy": "#101a32",
-        "brand_deep": "#5e0404",
-        "brand_accent": "#a8321a",
-        "emphasis_color": "#f8a89a",
-        "white": "#ffffff"
       }
     },
     "cost_nlr2": {
@@ -176,6 +107,217 @@
         "capacity_note_color": "#92400e",
         "savings_bg": "#dcfce7",
         "savings_color": "#166534"
+      }
+    },
+    "problem_nlr2": {
+      "type": "nuracom-problem-agitation",
+      "blocks": {
+        "pc_1": {
+          "type": "problem_card",
+          "settings": {
+            "icon": "⊗",
+            "title": "Your Laundry Schedule Is Controlled by the Weather",
+            "description": "You check the forecast before every wash. You rearrange your day around drying windows. And when rain hits mid-dry, you're rewashing a full load that now smells like damp towels. Your time is being stolen by something completely out of your control.",
+            "quote": "I'm so sick of planning my entire week around whether it's going to rain."
+          }
+        },
+        "pc_2": {
+          "type": "problem_card",
+          "settings": {
+            "icon": "⚡",
+            "title": "The Dryer Costs a Fortune (And Ruins Your Clothes)",
+            "description": "At $2–$3 per load, your tumble dryer is quietly draining hundreds of dollars a year. And the clothes it doesn't shrink, it fades. You're paying premium prices for a machine that actively damages your wardrobe. That's not a solution — it's a tax on bad weather.",
+            "quote": "The dryer shrunk my favourite jumper and I'm still annoyed about it. But what choice do I have?"
+          }
+        },
+        "pc_3": {
+          "type": "problem_card",
+          "settings": {
+            "icon": "💨",
+            "title": "Damp Clothes, Damp House, Damp Mood",
+            "description": "Clothes draped over every surface. A clothes horse blocking the hallway. That faint musty smell that never quite leaves. Indoor drying without a proper system doesn't just look bad — it's creating humidity that feeds mould, triggers allergies, and makes your home uncomfortable.",
+            "quote": "Our apartment looks like a refugee camp half the week with clothes hanging everywhere."
+          }
+        }
+      },
+      "block_order": [
+        "pc_1",
+        "pc_2",
+        "pc_3"
+      ],
+      "settings": {
+        "kicker": "Sound familiar?",
+        "heading": "The Three Laundry Problems Every Australian Knows",
+        "subheading": "You've been tolerating these for years. But they're costing you more than you think.",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "warm_gray": "#e8e3dd",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "icon_bg_1": "#fef2f2",
+        "icon_bg_2": "#fff7ed",
+        "icon_bg_3": "#fefce8"
+      }
+    },
+    "warranty_nlr2": {
+      "type": "nuracom-warranty-trust",
+      "blocks": {
+        "tl_1": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Day 1",
+            "dot_style": "active",
+            "label": "Purchase",
+            "label_style": "green"
+          }
+        },
+        "tl_2": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 1",
+            "dot_style": "active",
+            "label": "Full unit service coverage",
+            "label_style": "default"
+          }
+        },
+        "tl_3": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 2",
+            "dot_style": "payback",
+            "label": "Price difference recovered",
+            "label_style": "highlight"
+          }
+        },
+        "tl_4": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 3",
+            "dot_style": "default",
+            "label": "All parts covered",
+            "label_style": "default"
+          }
+        },
+        "tl_5": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 5",
+            "dot_style": "default",
+            "label": "Motor still covered",
+            "label_style": "default"
+          }
+        },
+        "tl_6": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 5+",
+            "dot_style": "default",
+            "label": "Pure savings ~$1,770+ saved",
+            "label_style": "green"
+          }
+        },
+        "tc_1": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "🛡",
+            "title": "Protected While You Save",
+            "text": "5 years on the motor. 2 years on every part. 1 year of full unit servicing included. Your investment is covered well past the point it's already paid for itself."
+          }
+        },
+        "tc_2": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "🇦🇺",
+            "title": "Local Support, Real People",
+            "text": "Australian-designed for Australian homes. Local customer support that actually picks up. You're not dealing with a faceless import brand — we're here when you need us."
+          }
+        },
+        "tc_3": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "💰",
+            "title": "No Hidden Costs",
+            "text": "Direct supply means no middleman markups. Free delivery to metro areas. And with $354+ in annual energy savings, the maths keeps getting better every year you own it."
+          }
+        }
+      },
+      "block_order": [
+        "tl_1",
+        "tl_2",
+        "tl_3",
+        "tl_4",
+        "tl_5",
+        "tl_6",
+        "tc_1",
+        "tc_2",
+        "tc_3"
+      ],
+      "settings": {
+        "kicker": "The Full Picture",
+        "heading": "Compare the Real Cost of Ownership",
+        "subheading": "A dryer looks cheaper on the shelf. But once you factor in what you'll actually spend over the next 5 years — and what you're protected by — the picture changes completely.",
+        "dryer_label": "Traditional",
+        "dryer_name": "Mid-Range Tumble Dryer",
+        "dryer_price": "$700–$1,200",
+        "dryer_sub": "Upfront purchase price",
+        "dryer_row_1_label": "+ Energy (5 years)",
+        "dryer_row_1_value": "+$2,215",
+        "dryer_row_2_label": "+ Maintenance/repairs",
+        "dryer_row_2_value": "+$200–$500",
+        "dryer_total_label": "5-Year True Cost",
+        "dryer_total_value": "$3,115–$3,915",
+        "dryer_warranty_title": "Typical Dryer Warranty",
+        "dryer_w1_years": "2 yr",
+        "dryer_w1_desc": "Parts & labour (most brands)",
+        "dryer_w2_years": "0",
+        "dryer_w2_desc": "No dedicated motor coverage",
+        "dryer_w3_years": "0",
+        "dryer_w3_desc": "No included servicing",
+        "nuracom_label": "Smart",
+        "nuracom_name": "Nuracom System",
+        "nuracom_price": "$1,199–$1,699",
+        "nuracom_sub": "Breeze · Aero · Stratos",
+        "nuracom_row_1_label": "+ Energy (5 years)",
+        "nuracom_row_1_value": "+$445",
+        "nuracom_row_2_label": "+ Maintenance/repairs",
+        "nuracom_row_2_value": "Covered",
+        "nuracom_total_label": "5-Year True Cost",
+        "nuracom_total_value": "$1,644–$2,144",
+        "nuracom_warranty_title": "Nuracom Warranty",
+        "nuracom_w1_years": "5 yr",
+        "nuracom_w1_desc": "Motor warranty — the heart of the system",
+        "nuracom_w2_years": "2 yr",
+        "nuracom_w2_desc": "All parts — electronics, rails, fans, lighting",
+        "nuracom_w3_years": "1 yr",
+        "nuracom_w3_desc": "Full unit service — included, on us",
+        "payback_headline": "Your Nuracom Is Paying You Back From Day One",
+        "payback_sub": "Every cycle costs 57c instead of $1.42. That $354 in annual energy savings means the price difference between a dryer and a Nuracom is recovered well within the warranty period — and the savings keep compounding every year after.",
+        "payback_note": "5-year savings: $354/yr × 5 = $1,770 in reduced energy costs alone",
+        "brand_deep": "#5e0404",
+        "white": "#ffffff",
+        "kicker_color": "#f8a89a",
+        "positive_color": "#4ade80",
+        "negative_color": "#f87171",
+        "payback_color": "#fbbf24"
+      }
+    },
+    "shift_nlr2": {
+      "type": "nuracom-shift",
+      "settings": {
+        "headline": "<p>What if drying clothes indoors was <em>actually solved?</em></p>",
+        "text_1": "Not managed. Not tolerated. Not worked around with cheap racks and crossed fingers.",
+        "text_2": "What if there was a system that dried your clothes in hours — every time, rain or shine — using less power than a light bulb? A system you could mount once, operate with one touch, and never think about again?",
+        "show_divider": true,
+        "text_3": "There is. And the technology behind it is simpler than you'd expect.",
+        "navy": "#101a32",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "emphasis_color": "#f8a89a",
+        "white": "#ffffff"
       }
     },
     "mechanism_nlr2": {
@@ -474,148 +616,6 @@
         "star_color": "#f59e0b"
       }
     },
-    "warranty_nlr2": {
-      "type": "nuracom-warranty-trust",
-      "blocks": {
-        "tl_1": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Day 1",
-            "dot_style": "active",
-            "label": "Purchase",
-            "label_style": "green"
-          }
-        },
-        "tl_2": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Year 1",
-            "dot_style": "active",
-            "label": "Full unit service coverage",
-            "label_style": "default"
-          }
-        },
-        "tl_3": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Year 2",
-            "dot_style": "payback",
-            "label": "Price difference recovered",
-            "label_style": "highlight"
-          }
-        },
-        "tl_4": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Year 3",
-            "dot_style": "default",
-            "label": "All parts covered",
-            "label_style": "default"
-          }
-        },
-        "tl_5": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Year 5",
-            "dot_style": "default",
-            "label": "Motor still covered",
-            "label_style": "default"
-          }
-        },
-        "tl_6": {
-          "type": "timeline_point",
-          "settings": {
-            "year": "Year 5+",
-            "dot_style": "default",
-            "label": "Pure savings ~$1,770+ saved",
-            "label_style": "green"
-          }
-        },
-        "tc_1": {
-          "type": "trust_card",
-          "settings": {
-            "icon": "🛡",
-            "title": "Protected While You Save",
-            "text": "5 years on the motor. 2 years on every part. 1 year of full unit servicing included. Your investment is covered well past the point it's already paid for itself."
-          }
-        },
-        "tc_2": {
-          "type": "trust_card",
-          "settings": {
-            "icon": "🇦🇺",
-            "title": "Local Support, Real People",
-            "text": "Australian-designed for Australian homes. Local customer support that actually picks up. You're not dealing with a faceless import brand — we're here when you need us."
-          }
-        },
-        "tc_3": {
-          "type": "trust_card",
-          "settings": {
-            "icon": "💰",
-            "title": "No Hidden Costs",
-            "text": "Direct supply means no middleman markups. Free delivery to metro areas. And with $354+ in annual energy savings, the maths keeps getting better every year you own it."
-          }
-        }
-      },
-      "block_order": [
-        "tl_1",
-        "tl_2",
-        "tl_3",
-        "tl_4",
-        "tl_5",
-        "tl_6",
-        "tc_1",
-        "tc_2",
-        "tc_3"
-      ],
-      "settings": {
-        "kicker": "The Full Picture",
-        "heading": "Compare the Real Cost of Ownership",
-        "subheading": "A dryer looks cheaper on the shelf. But once you factor in what you'll actually spend over the next 5 years — and what you're protected by — the picture changes completely.",
-        "dryer_label": "Traditional",
-        "dryer_name": "Mid-Range Tumble Dryer",
-        "dryer_price": "$700–$1,200",
-        "dryer_sub": "Upfront purchase price",
-        "dryer_row_1_label": "+ Energy (5 years)",
-        "dryer_row_1_value": "+$2,215",
-        "dryer_row_2_label": "+ Maintenance/repairs",
-        "dryer_row_2_value": "+$200–$500",
-        "dryer_total_label": "5-Year True Cost",
-        "dryer_total_value": "$3,115–$3,915",
-        "dryer_warranty_title": "Typical Dryer Warranty",
-        "dryer_w1_years": "2 yr",
-        "dryer_w1_desc": "Parts & labour (most brands)",
-        "dryer_w2_years": "0",
-        "dryer_w2_desc": "No dedicated motor coverage",
-        "dryer_w3_years": "0",
-        "dryer_w3_desc": "No included servicing",
-        "nuracom_label": "Smart",
-        "nuracom_name": "Nuracom System",
-        "nuracom_price": "$1,199–$1,699",
-        "nuracom_sub": "Breeze · Aero · Stratos",
-        "nuracom_row_1_label": "+ Energy (5 years)",
-        "nuracom_row_1_value": "+$445",
-        "nuracom_row_2_label": "+ Maintenance/repairs",
-        "nuracom_row_2_value": "Covered",
-        "nuracom_total_label": "5-Year True Cost",
-        "nuracom_total_value": "$1,644–$2,144",
-        "nuracom_warranty_title": "Nuracom Warranty",
-        "nuracom_w1_years": "5 yr",
-        "nuracom_w1_desc": "Motor warranty — the heart of the system",
-        "nuracom_w2_years": "2 yr",
-        "nuracom_w2_desc": "All parts — electronics, rails, fans, lighting",
-        "nuracom_w3_years": "1 yr",
-        "nuracom_w3_desc": "Full unit service — included, on us",
-        "payback_headline": "Your Nuracom Is Paying You Back From Day One",
-        "payback_sub": "Every cycle costs 57c instead of $1.42. That $354 in annual energy savings means the price difference between a dryer and a Nuracom is recovered well within the warranty period — and the savings keep compounding every year after.",
-        "payback_note": "5-year savings: $354/yr × 5 = $1,770 in reduced energy costs alone",
-        "brand_deep": "#5e0404",
-        "white": "#ffffff",
-        "kicker_color": "#f8a89a",
-        "positive_color": "#4ade80",
-        "negative_color": "#f87171",
-        "payback_color": "#fbbf24"
-      }
-    },
     "faq_nlr2": {
       "type": "nuracom-faq",
       "blocks": {
@@ -662,8 +662,8 @@
         "fq_6": {
           "type": "faq_item",
           "settings": {
-            "question": "What if I'm not happy with it?",
-            "answer": "<p>We want you to be completely satisfied. Nuracom offers comprehensive warranty coverage (up to 5 years on the motor) and responsive Australian customer support. If you have any issues, our team is available to help troubleshoot or arrange service. We stand behind our products because we know they work.</p>",
+            "question": "What if I'm not happy with it or something breaks?",
+            "answer": "<p>We want you to be completely satisfied. Nuracom offers comprehensive warranty coverage (up to 5 years on the motor) T&C apply, available on our website. We pride ourselves in providing responsive Australian customer support. If you have any issues, our team is available to help troubleshoot or arrange service. We stand behind our products because we know they work.</p>",
             "open_by_default": false
           }
         }
