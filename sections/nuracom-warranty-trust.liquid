@@ -14,10 +14,10 @@
     --radius: 12px;
     --radius-lg: 20px;
     --max-width: 1120px;
-    --section-pad: clamp(60px, 8vw, 120px);
+    --section-pad: clamp(44px, 6vw, 80px);
   }
   #shopify-section-{{ section.id }} * { box-sizing: border-box; }
-  #shopify-section-{{ section.id }} .ntrust { padding: var(--section-pad) 0; background: var(--brand-deep); color: var(--white); position: relative; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; }
+  #shopify-section-{{ section.id }} .ntrust { padding: var(--section-pad) 0 calc(var(--section-pad) * 0.85); background: var(--brand-deep); color: var(--white); position: relative; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; scroll-margin-top: 80px; }
   #shopify-section-{{ section.id }} .ntrust::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none; }
   #shopify-section-{{ section.id }} .ntrust__container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
   #shopify-section-{{ section.id }} .ntrust__header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
@@ -81,7 +81,8 @@
   }
 </style>
 
-<section class="ntrust">
+<section class="ntrust" id="warranty-trust">
+  <span id="savings" aria-hidden="true" style="position:absolute;top:-80px;"></span>
   <div class="ntrust__container">
 
     <div class="ntrust__header ntrust__reveal">
