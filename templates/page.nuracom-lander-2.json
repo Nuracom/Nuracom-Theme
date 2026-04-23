@@ -1,8 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_nlr2": {
       "type": "nuracom-hero",
-      "settings": {}
+      "settings": {
+        "badge_text": "Australia's #1 Smart Drying System",
+        "headline": "<p>Stop Letting the Weather Decide When You Do <em>Laundry.</em></p>",
+        "subheadline": "Nuracom's smart drying technology dries your clothes indoors in hours, not days — using turbo-fan airflow that costs under $1 per use. No dryer. No weather app. No stress.",
+        "primary_btn_text": "See the Range",
+        "primary_btn_url": "",
+        "secondary_btn_text": "How It Works",
+        "secondary_btn_url": "",
+        "show_proof": true,
+        "proof_headline": "Trusted by Australian families",
+        "proof_subtext": "Hundreds of 5-star reviews nationwide",
+        "avatar_1_letter": "J",
+        "avatar_1_bg": "#e8d5d0",
+        "avatar_2_letter": "S",
+        "avatar_2_bg": "#d0dbe8",
+        "avatar_3_letter": "M",
+        "avatar_3_bg": "#d5e8d0",
+        "avatar_4_letter": "K",
+        "avatar_4_bg": "#e8e0d0",
+        "show_cost_card": true,
+        "cost_label": "Cost per use",
+        "cost_value": "Under $1",
+        "cost_icon_bg": "#dcfce7",
+        "cost_value_color": "#16a34a",
+        "show_rating_card": true,
+        "rating_label": "4.9 avg. rating",
+        "star_color": "#f59e0b",
+        "brand_deep": "#5e0404",
+        "brand_dark": "#801f0a",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "warm_gray": "#e8e3dd",
+        "text_primary": "#1a1a1a",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "badge_dot_color": "#22c55e"
+      }
     },
     "problem_nlr2": {
       "type": "nuracom-problem-agitation",
@@ -35,12 +82,101 @@
           }
         }
       },
-      "block_order": ["pc_1", "pc_2", "pc_3"],
-      "settings": {}
+      "block_order": [
+        "pc_1",
+        "pc_2",
+        "pc_3"
+      ],
+      "settings": {
+        "kicker": "Sound familiar?",
+        "heading": "The Three Laundry Problems Every Australian Knows",
+        "subheading": "You've been tolerating these for years. But they're costing you more than you think.",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "warm_gray": "#e8e3dd",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "icon_bg_1": "#fef2f2",
+        "icon_bg_2": "#fff7ed",
+        "icon_bg_3": "#fefce8"
+      }
     },
     "shift_nlr2": {
       "type": "nuracom-shift",
-      "settings": {}
+      "settings": {
+        "headline": "<p>What if drying clothes indoors was <em>actually solved?</em></p>",
+        "text_1": "Not managed. Not tolerated. Not worked around with cheap racks and crossed fingers.",
+        "text_2": "What if there was a system that dried your clothes in hours — every time, rain or shine — using less power than a light bulb? A system you could mount once, operate with one touch, and never think about again?",
+        "show_divider": true,
+        "text_3": "There is. And the technology behind it is simpler than you'd expect.",
+        "navy": "#101a32",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "emphasis_color": "#f8a89a",
+        "white": "#ffffff"
+      }
+    },
+    "cost_nlr2": {
+      "type": "nuracom-cost-comparison",
+      "settings": {
+        "kicker": "The Maths",
+        "heading": "Your Tumble Dryer Is Quietly Costing You Hundreds Every Year",
+        "subheading": "<p>We ran the numbers using real product specs and the current Australian average electricity rate of <strong>~36c/kWh</strong>. Here's what most families never calculate.</p>",
+        "dryer_label": "Traditional",
+        "dryer_method": "Tumble Dryer",
+        "dryer_price": "$1.42",
+        "dryer_per": "per load",
+        "dryer_row_1_label": "Avg. rated power",
+        "dryer_row_1_value": "~2,200W",
+        "dryer_row_2_label": "Avg. cycle time",
+        "dryer_row_2_value": "~110 min",
+        "dryer_row_3_label": "Energy per load",
+        "dryer_row_3_value": "~4.0 kWh",
+        "dryer_total_label": "Cost @ 36c/kWh",
+        "dryer_total_value": "$1.42",
+        "dryer_capacity_text": "<p><strong>Capacity: ~7&ndash;8 kg per load</strong><br>A family of 4 averages <strong>6 dryer loads/week</strong></p>",
+        "dryer_annual_label": "Annual cost (6 loads × 52 weeks)",
+        "dryer_annual_value": "$443/year",
+        "nuracom_label": "Smart",
+        "nuracom_method": "Nuracom System",
+        "nuracom_price": "$0.57",
+        "nuracom_per": "per cycle",
+        "nuracom_row_1_label": "Rated power",
+        "nuracom_row_1_value": "800W",
+        "nuracom_row_2_label": "Cycle (auto shut-off)",
+        "nuracom_row_2_value": "2 hours",
+        "nuracom_row_3_label": "Energy per cycle",
+        "nuracom_row_3_value": "1.6 kWh",
+        "nuracom_total_label": "Cost @ 36c/kWh",
+        "nuracom_total_value": "$0.57",
+        "nuracom_capacity_text": "<p><strong>Capacity: up to 35 kg</strong><br>That's <strong>~5 dryer loads in 2&ndash;3 rack loads</strong></p>",
+        "nuracom_annual_label": "Annual cost (3 cycles × 52 weeks)",
+        "nuracom_annual_value": "$89/year",
+        "capacity_note_headline": "The capacity difference is the real game-changer",
+        "capacity_note_text": "<p>A standard tumble dryer holds 7&ndash;8 kg per load. A Nuracom holds <strong>up to 35&ndash;45 kg</strong> depending on model — meaning the same weekly laundry that takes <strong>6 dryer cycles</strong> can be handled in just <strong>2&ndash;3 Nuracom cycles</strong>. Fewer cycles = dramatically less energy, even before you factor in the lower wattage.</p>",
+        "savings_headline": "Save $354+ per year on energy alone",
+        "savings_sub": "That's $443 in dryer costs vs just $89 with Nuracom. Your system pays for itself — then keeps saving you money every year after.",
+        "savings_note": "Based on the current Australian average electricity rate of ~36c/kWh (source: Canstar, CHOICE). Tumble dryer: standard vented model at ~4 kWh per load (source: CHOICE Australia). Nuracom: 800W rated, 2-hour auto shut-off cycle. Capacity based on the Nuracom Aero (35 kg); Stratos holds up to 45 kg. A family of 4 averaging ~48 kg of laundry per week (~3 Nuracom cycles vs 6 dryer loads) is used for load calculations.",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "text_primary": "#1a1a1a",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "positive_color": "#4ade80",
+        "negative_color": "#dc2626",
+        "capacity_note_bg": "#fef3c7",
+        "capacity_note_color": "#92400e",
+        "savings_bg": "#dcfce7",
+        "savings_color": "#166534"
+      }
     },
     "mechanism_nlr2": {
       "type": "nuracom-mechanism",
@@ -82,8 +218,24 @@
           }
         }
       },
-      "block_order": ["ms_1", "ms_2", "ms_3"],
-      "settings": {}
+      "block_order": [
+        "ms_1",
+        "ms_2",
+        "ms_3"
+      ],
+      "settings": {
+        "kicker": "The Technology",
+        "heading": "How Nuracom Dries Clothes 2x Faster — Without Heat Damage",
+        "subheading": "Three engineering innovations working together to create the fastest, most efficient indoor drying system ever built for Australian homes.",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "text_primary": "#1a1a1a",
+        "text_secondary": "#555555",
+        "white": "#ffffff"
+      }
     },
     "products_nlr2": {
       "type": "nuracom-products",
@@ -95,6 +247,7 @@
             "name": "Nuracom Breeze",
             "tagline": "The Trendsetter",
             "featured": false,
+            "badge_text": "",
             "spec_1_value": "2",
             "spec_1_label": "Turbo Fans",
             "spec_2_value": "30kg",
@@ -105,7 +258,10 @@
             "feature_4": "One-Touch Lifting",
             "feature_5": "Ultra-Silent Motors",
             "feature_6": "Obstruction Sensing",
-            "cta_text": "View Breeze"
+            "feature_7": "",
+            "feature_8": "",
+            "cta_text": "View Breeze",
+            "cta_url": ""
           }
         },
         "p_2": {
@@ -125,7 +281,11 @@
             "feature_3": "Voice Control",
             "feature_4": "2 Extra Lighting Modes",
             "feature_5": "Longer Rail (130–220cm)",
-            "cta_text": "View Aero"
+            "feature_6": "",
+            "feature_7": "",
+            "feature_8": "",
+            "cta_text": "View Aero",
+            "cta_url": ""
           }
         },
         "p_3": {
@@ -135,6 +295,7 @@
             "name": "Nuracom Stratos",
             "tagline": "The State of The Art",
             "featured": false,
+            "badge_text": "",
             "spec_1_value": "6",
             "spec_1_label": "Turbo Fans",
             "spec_2_value": "40kg",
@@ -143,16 +304,35 @@
             "feature_2": "2x Faster Drying",
             "feature_3": "Negative Ion Dust Mite Removal",
             "feature_4": "Digital Display Screen",
-            "cta_text": "View Stratos"
+            "feature_5": "",
+            "feature_6": "",
+            "feature_7": "",
+            "feature_8": "",
+            "cta_text": "View Stratos",
+            "cta_url": ""
           }
         }
       },
-      "block_order": ["p_1", "p_2", "p_3"],
-      "settings": {}
-    },
-    "cost_nlr2": {
-      "type": "nuracom-cost-comparison",
-      "settings": {}
+      "block_order": [
+        "p_1",
+        "p_2",
+        "p_3"
+      ],
+      "settings": {
+        "kicker": "The Range",
+        "heading": "Choose Your Nuracom",
+        "subheading": "Three models. One guarantee: a perfect dry, every time.",
+        "bg_color": "#f8f5f1",
+        "brand_deep": "#5e0404",
+        "brand_dark": "#801f0a",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "check_color": "#16a34a"
+      }
     },
     "install_nlr2": {
       "type": "nuracom-installation",
@@ -182,16 +362,62 @@
           }
         }
       },
-      "block_order": ["i_1", "i_2", "i_3"],
-      "settings": {}
+      "block_order": [
+        "i_1",
+        "i_2",
+        "i_3"
+      ],
+      "settings": {
+        "kicker": "Simple Setup",
+        "heading": "Install It Yourself in Under 30 Minutes",
+        "body_text": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom.",
+        "visual_icon": "🔧",
+        "visual_placeholder_text": "[Installation walkthrough image/video here]",
+        "guarantee_icon": "📖",
+        "guarantee_text": "<p><strong>Full video walkthrough included</strong> with every purchase, plus a detailed printed manual. Our support team is also available if you need any help.</p>",
+        "bg_color": "#f8f5f1",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "warm_gray": "#e8e3dd",
+        "text_primary": "#1a1a1a",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff"
+      }
     },
     "social_nlr2": {
       "type": "nuracom-social-proof",
       "blocks": {
-        "s_1": { "type": "stat", "settings": { "number": "4.9", "label": "Average Rating" } },
-        "s_2": { "type": "stat", "settings": { "number": "500+", "label": "Happy Homes" } },
-        "s_3": { "type": "stat", "settings": { "number": "<$1", "label": "Cost Per Use" } },
-        "s_4": { "type": "stat", "settings": { "number": "5yr", "label": "Motor Warranty" } },
+        "s_1": {
+          "type": "stat",
+          "settings": {
+            "number": "4.9",
+            "label": "Average Rating"
+          }
+        },
+        "s_2": {
+          "type": "stat",
+          "settings": {
+            "number": "500+",
+            "label": "Happy Homes"
+          }
+        },
+        "s_3": {
+          "type": "stat",
+          "settings": {
+            "number": "<$1",
+            "label": "Cost Per Use"
+          }
+        },
+        "s_4": {
+          "type": "stat",
+          "settings": {
+            "number": "5yr",
+            "label": "Motor Warranty"
+          }
+        },
         "t_1": {
           "type": "testimonial",
           "settings": {
@@ -223,60 +449,307 @@
           }
         }
       },
-      "block_order": ["s_1", "s_2", "s_3", "s_4", "t_1", "t_2", "t_3"],
-      "settings": {}
+      "block_order": [
+        "s_1",
+        "s_2",
+        "s_3",
+        "s_4",
+        "t_1",
+        "t_2",
+        "t_3"
+      ],
+      "settings": {
+        "kicker": "Real Australians. Real Results.",
+        "heading": "Join Hundreds of Families Who've Made the Switch",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "warm_gray": "#e8e3dd",
+        "text_primary": "#1a1a1a",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "star_color": "#f59e0b"
+      }
     },
     "warranty_nlr2": {
       "type": "nuracom-warranty-trust",
       "blocks": {
-        "tl_1": { "type": "timeline_point", "settings": { "year": "Day 1", "dot_style": "active", "label": "Purchase", "label_style": "green" } },
-        "tl_2": { "type": "timeline_point", "settings": { "year": "Year 1", "dot_style": "active", "label": "Full unit service coverage", "label_style": "default" } },
-        "tl_3": { "type": "timeline_point", "settings": { "year": "Year 2", "dot_style": "payback", "label": "Price difference recovered", "label_style": "highlight" } },
-        "tl_4": { "type": "timeline_point", "settings": { "year": "Year 3", "dot_style": "default", "label": "All parts covered", "label_style": "default" } },
-        "tl_5": { "type": "timeline_point", "settings": { "year": "Year 5", "dot_style": "default", "label": "Motor still covered", "label_style": "default" } },
-        "tl_6": { "type": "timeline_point", "settings": { "year": "Year 5+", "dot_style": "default", "label": "Pure savings ~$1,770+ saved", "label_style": "green" } },
-        "tc_1": { "type": "trust_card", "settings": { "icon": "🛡", "title": "Protected While You Save", "text": "5 years on the motor. 2 years on every part. 1 year of full unit servicing included. Your investment is covered well past the point it's already paid for itself." } },
-        "tc_2": { "type": "trust_card", "settings": { "icon": "🇦🇺", "title": "Local Support, Real People", "text": "Australian-designed for Australian homes. Local customer support that actually picks up. You're not dealing with a faceless import brand — we're here when you need us." } },
-        "tc_3": { "type": "trust_card", "settings": { "icon": "💰", "title": "No Hidden Costs", "text": "Direct supply means no middleman markups. Free delivery to metro areas. And with $354+ in annual energy savings, the maths keeps getting better every year you own it." } }
+        "tl_1": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Day 1",
+            "dot_style": "active",
+            "label": "Purchase",
+            "label_style": "green"
+          }
+        },
+        "tl_2": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 1",
+            "dot_style": "active",
+            "label": "Full unit service coverage",
+            "label_style": "default"
+          }
+        },
+        "tl_3": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 2",
+            "dot_style": "payback",
+            "label": "Price difference recovered",
+            "label_style": "highlight"
+          }
+        },
+        "tl_4": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 3",
+            "dot_style": "default",
+            "label": "All parts covered",
+            "label_style": "default"
+          }
+        },
+        "tl_5": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 5",
+            "dot_style": "default",
+            "label": "Motor still covered",
+            "label_style": "default"
+          }
+        },
+        "tl_6": {
+          "type": "timeline_point",
+          "settings": {
+            "year": "Year 5+",
+            "dot_style": "default",
+            "label": "Pure savings ~$1,770+ saved",
+            "label_style": "green"
+          }
+        },
+        "tc_1": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "🛡",
+            "title": "Protected While You Save",
+            "text": "5 years on the motor. 2 years on every part. 1 year of full unit servicing included. Your investment is covered well past the point it's already paid for itself."
+          }
+        },
+        "tc_2": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "🇦🇺",
+            "title": "Local Support, Real People",
+            "text": "Australian-designed for Australian homes. Local customer support that actually picks up. You're not dealing with a faceless import brand — we're here when you need us."
+          }
+        },
+        "tc_3": {
+          "type": "trust_card",
+          "settings": {
+            "icon": "💰",
+            "title": "No Hidden Costs",
+            "text": "Direct supply means no middleman markups. Free delivery to metro areas. And with $354+ in annual energy savings, the maths keeps getting better every year you own it."
+          }
+        }
       },
-      "block_order": ["tl_1", "tl_2", "tl_3", "tl_4", "tl_5", "tl_6", "tc_1", "tc_2", "tc_3"],
-      "settings": {}
+      "block_order": [
+        "tl_1",
+        "tl_2",
+        "tl_3",
+        "tl_4",
+        "tl_5",
+        "tl_6",
+        "tc_1",
+        "tc_2",
+        "tc_3"
+      ],
+      "settings": {
+        "kicker": "The Full Picture",
+        "heading": "Compare the Real Cost of Ownership",
+        "subheading": "A dryer looks cheaper on the shelf. But once you factor in what you'll actually spend over the next 5 years — and what you're protected by — the picture changes completely.",
+        "dryer_label": "Traditional",
+        "dryer_name": "Mid-Range Tumble Dryer",
+        "dryer_price": "$700–$1,200",
+        "dryer_sub": "Upfront purchase price",
+        "dryer_row_1_label": "+ Energy (5 years)",
+        "dryer_row_1_value": "+$2,215",
+        "dryer_row_2_label": "+ Maintenance/repairs",
+        "dryer_row_2_value": "+$200–$500",
+        "dryer_total_label": "5-Year True Cost",
+        "dryer_total_value": "$3,115–$3,915",
+        "dryer_warranty_title": "Typical Dryer Warranty",
+        "dryer_w1_years": "2 yr",
+        "dryer_w1_desc": "Parts & labour (most brands)",
+        "dryer_w2_years": "0",
+        "dryer_w2_desc": "No dedicated motor coverage",
+        "dryer_w3_years": "0",
+        "dryer_w3_desc": "No included servicing",
+        "nuracom_label": "Smart",
+        "nuracom_name": "Nuracom System",
+        "nuracom_price": "$1,199–$1,699",
+        "nuracom_sub": "Breeze · Aero · Stratos",
+        "nuracom_row_1_label": "+ Energy (5 years)",
+        "nuracom_row_1_value": "+$445",
+        "nuracom_row_2_label": "+ Maintenance/repairs",
+        "nuracom_row_2_value": "Covered",
+        "nuracom_total_label": "5-Year True Cost",
+        "nuracom_total_value": "$1,644–$2,144",
+        "nuracom_warranty_title": "Nuracom Warranty",
+        "nuracom_w1_years": "5 yr",
+        "nuracom_w1_desc": "Motor warranty — the heart of the system",
+        "nuracom_w2_years": "2 yr",
+        "nuracom_w2_desc": "All parts — electronics, rails, fans, lighting",
+        "nuracom_w3_years": "1 yr",
+        "nuracom_w3_desc": "Full unit service — included, on us",
+        "payback_headline": "Your Nuracom Is Paying You Back From Day One",
+        "payback_sub": "Every cycle costs 57c instead of $1.42. That $354 in annual energy savings means the price difference between a dryer and a Nuracom is recovered well within the warranty period — and the savings keep compounding every year after.",
+        "payback_note": "5-year savings: $354/yr × 5 = $1,770 in reduced energy costs alone",
+        "brand_deep": "#5e0404",
+        "white": "#ffffff",
+        "kicker_color": "#f8a89a",
+        "positive_color": "#4ade80",
+        "negative_color": "#f87171",
+        "payback_color": "#fbbf24"
+      }
     },
     "faq_nlr2": {
       "type": "nuracom-faq",
       "blocks": {
-        "fq_1": { "type": "faq_item", "settings": { "question": "How fast does it actually dry clothes?", "answer": "<p>Drying time depends on the fabric, load size, and ambient conditions, but most users report their clothes are dry within 3–6 hours — compared to 24–48 hours on a passive rack. The Stratos model with 6 turbo fans cuts this further to approximately 2–4 hours for typical loads. This is genuinely transformative compared to traditional indoor drying.</p>", "open_by_default": false } },
-        "fq_2": { "type": "faq_item", "settings": { "question": "Will it work with my ceiling type?", "answer": "<p>Nuracom systems are compatible with standard plasterboard, timber, and concrete ceilings — which covers the vast majority of Australian homes. The mounting brackets are included with every purchase, and our installation guide covers all common ceiling types. If you're unsure, our support team can advise before you buy.</p>", "open_by_default": false } },
-        "fq_3": { "type": "faq_item", "settings": { "question": "How much weight can it hold?", "answer": "<p>The Breeze holds up to 30kg, the Aero up to 35kg, and the Stratos up to 40kg of wet laundry. To put that in context, a full washing machine load of wet clothes typically weighs 8–12kg. So even the Breeze can handle 2–3 full loads at once. The obstruction sensing system also prevents overloading.</p>", "open_by_default": false } },
-        "fq_4": { "type": "faq_item", "settings": { "question": "Is it noisy?", "answer": "<p>No. Nuracom uses ultra-silent motors specifically engineered to operate below conversational volume. You can run it while watching TV, sleeping, or working from home without noticing it. This was a non-negotiable design requirement for us — a noisy drying system defeats the purpose of home convenience.</p>", "open_by_default": false } },
-        "fq_5": { "type": "faq_item", "settings": { "question": "Do I really not need a tradesperson to install it?", "answer": "<p>Correct. The system plugs into a standard Australian power outlet — no electrician required. The ceiling mount uses standard bracket fixings (included). If you've ever put up a curtain rod or a shelf, you have the skills needed. Most customers complete installation in 20–30 minutes. We also include a detailed video walkthrough with every purchase.</p>", "open_by_default": false } },
-        "fq_6": { "type": "faq_item", "settings": { "question": "What if I'm not happy with it?", "answer": "<p>We want you to be completely satisfied. Nuracom offers comprehensive warranty coverage (up to 5 years on the motor) and responsive Australian customer support. If you have any issues, our team is available to help troubleshoot or arrange service. We stand behind our products because we know they work.</p>", "open_by_default": false } }
+        "fq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How fast does it actually dry clothes?",
+            "answer": "<p>Drying time depends on the fabric, load size, and ambient conditions, but most users report their clothes are dry within 3–6 hours — compared to 24–48 hours on a passive rack. The Stratos model with 6 turbo fans cuts this further to approximately 2–4 hours for typical loads. This is genuinely transformative compared to traditional indoor drying.</p>",
+            "open_by_default": false
+          }
+        },
+        "fq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it work with my ceiling type?",
+            "answer": "<p>Nuracom systems are compatible with standard plasterboard, timber, and concrete ceilings — which covers the vast majority of Australian homes. The mounting brackets are included with every purchase, and our installation guide covers all common ceiling types. If you're unsure, our support team can advise before you buy.</p>",
+            "open_by_default": false
+          }
+        },
+        "fq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How much weight can it hold?",
+            "answer": "<p>The Breeze holds up to 30kg, the Aero up to 35kg, and the Stratos up to 40kg of wet laundry. To put that in context, a full washing machine load of wet clothes typically weighs 8–12kg. So even the Breeze can handle 2–3 full loads at once. The obstruction sensing system also prevents overloading.</p>",
+            "open_by_default": false
+          }
+        },
+        "fq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it noisy?",
+            "answer": "<p>No. Nuracom uses ultra-silent motors specifically engineered to operate below conversational volume. You can run it while watching TV, sleeping, or working from home without noticing it. This was a non-negotiable design requirement for us — a noisy drying system defeats the purpose of home convenience.</p>",
+            "open_by_default": false
+          }
+        },
+        "fq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I really not need a tradesperson to install it?",
+            "answer": "<p>Correct. The system plugs into a standard Australian power outlet — no electrician required. The ceiling mount uses standard bracket fixings (included). If you've ever put up a curtain rod or a shelf, you have the skills needed. Most customers complete installation in 20–30 minutes. We also include a detailed video walkthrough with every purchase.</p>",
+            "open_by_default": false
+          }
+        },
+        "fq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I'm not happy with it?",
+            "answer": "<p>We want you to be completely satisfied. Nuracom offers comprehensive warranty coverage (up to 5 years on the motor) and responsive Australian customer support. If you have any issues, our team is available to help troubleshoot or arrange service. We stand behind our products because we know they work.</p>",
+            "open_by_default": false
+          }
+        }
       },
-      "block_order": ["fq_1", "fq_2", "fq_3", "fq_4", "fq_5", "fq_6"],
-      "settings": {}
+      "block_order": [
+        "fq_1",
+        "fq_2",
+        "fq_3",
+        "fq_4",
+        "fq_5",
+        "fq_6"
+      ],
+      "settings": {
+        "kicker": "Questions",
+        "heading": "Everything You Need to Know",
+        "bg_color": "#f8f5f1",
+        "brand_deep": "#5e0404",
+        "brand_accent": "#a8321a",
+        "navy": "#101a32",
+        "cream": "#f8f5f1",
+        "text_secondary": "#555555",
+        "white": "#ffffff"
+      }
     },
     "cta_nlr2": {
       "type": "nuracom-final-cta",
       "blocks": {
-        "a_1": { "type": "assurance_item", "settings": { "text": "Free Australian shipping" } },
-        "a_2": { "type": "assurance_item", "settings": { "text": "Up to 5-year warranty" } },
-        "a_3": { "type": "assurance_item", "settings": { "text": "Under $1 per use" } },
-        "a_4": { "type": "assurance_item", "settings": { "text": "DIY install in 30 mins" } }
+        "a_1": {
+          "type": "assurance_item",
+          "settings": {
+            "text": "Free Australian shipping"
+          }
+        },
+        "a_2": {
+          "type": "assurance_item",
+          "settings": {
+            "text": "Up to 5-year warranty"
+          }
+        },
+        "a_3": {
+          "type": "assurance_item",
+          "settings": {
+            "text": "Under $1 per use"
+          }
+        },
+        "a_4": {
+          "type": "assurance_item",
+          "settings": {
+            "text": "DIY install in 30 mins"
+          }
+        }
       },
-      "block_order": ["a_1", "a_2", "a_3", "a_4"],
-      "settings": {}
+      "block_order": [
+        "a_1",
+        "a_2",
+        "a_3",
+        "a_4"
+      ],
+      "settings": {
+        "headline": "<p>Ready to Never Worry About <em>Drying Laundry</em> Again?</p>",
+        "subtext": "Join hundreds of Australian families who've permanently solved indoor drying. One purchase. One install. A lifetime of perfect dries.",
+        "primary_btn_text": "Shop the Range",
+        "primary_btn_url": "",
+        "secondary_btn_text": "See How It Works",
+        "secondary_btn_url": "",
+        "bg_color": "#ffffff",
+        "brand_deep": "#5e0404",
+        "brand_dark": "#801f0a",
+        "navy": "#101a32",
+        "text_secondary": "#555555",
+        "text_muted": "#888888",
+        "white": "#ffffff",
+        "check_color": "#16a34a"
+      }
     }
   },
   "order": [
     "hero_nlr2",
+    "cost_nlr2",
     "problem_nlr2",
+    "warranty_nlr2",
     "shift_nlr2",
     "mechanism_nlr2",
     "products_nlr2",
-    "cost_nlr2",
     "install_nlr2",
     "social_nlr2",
-    "warranty_nlr2",
     "faq_nlr2",
     "cta_nlr2"
   ]
