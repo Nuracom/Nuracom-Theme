@@ -1,212 +1,92 @@
+{% comment %}
+  Nuracom Installation — Belief #5 (I can do this myself)
+  3-step walkthrough. Kills the "ceiling-mount sounds hard" objection.
+{% endcomment %}
+
 <style>
-:root {
-  --brand-deep: #5E0404;
-  --brand-dark: #801f0a;
-  --brand-accent: #a8321a;
-  --navy: #101a32;
-  --cream: #f8f5f1;
-  --warm-gray: #e8e3dd;
-  --text-primary: #1a1a1a;
-  --text-secondary: #555;
-  --text-muted: #888;
-  --white: #ffffff;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
-  --radius: 12px;
-  --radius-lg: 20px;
-  --max-width: 1120px;
-  --section-pad: clamp(60px, 8vw, 120px);
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.kicker {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--brand-accent);
-  margin-bottom: 12px;
-  display: block;
-}
-
-.headline-lg {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--navy);
-  margin-bottom: 20px;
-}
-
-.body-text {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#shopify-section-{{ section.id }} .install {
-  padding: var(--section-pad) 0;
-  background: var(--cream);
-}
-
-#shopify-section-{{ section.id }} .install__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-#shopify-section-{{ section.id }} .install__steps {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-#shopify-section-{{ section.id }} .install__step {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-#shopify-section-{{ section.id }} .install__step-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--brand-deep);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-#shopify-section-{{ section.id }} .install__step-content h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-
-#shopify-section-{{ section.id }} .install__step-content p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-#shopify-section-{{ section.id }} .install__visual {
-  background: linear-gradient(135deg, var(--warm-gray), #d4cfc9);
-  border-radius: var(--radius-lg);
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
-}
-
-#shopify-section-{{ section.id }} .install__visual-inner {
-  text-align: center;
-  padding: 40px;
-}
-
-#shopify-section-{{ section.id }} .install__visual-icon {
-  font-size: 4rem;
-  margin-bottom: 12px;
-}
-
-#shopify-section-{{ section.id }} .install__visual-text {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-#shopify-section-{{ section.id }} .install__guarantee {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-top: 32px;
-  box-shadow: var(--shadow-sm);
-}
-
-#shopify-section-{{ section.id }} .install__guarantee-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-#shopify-section-{{ section.id }} .install__guarantee-text {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-#shopify-section-{{ section.id }} .install__guarantee-text strong {
-  color: var(--text-primary);
-}
-
-@media (max-width: 900px) {
-  #shopify-section-{{ section.id }} .install__grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  #shopify-section-{{ section.id }} {
+    --brand-deep: {{ section.settings.brand_deep }};
+    --brand-accent: {{ section.settings.brand_accent }};
+    --navy: {{ section.settings.navy }};
+    --cream: {{ section.settings.cream }};
+    --warm-gray: {{ section.settings.warm_gray }};
+    --text-primary: {{ section.settings.text_primary }};
+    --text-secondary: {{ section.settings.text_secondary }};
+    --text-muted: {{ section.settings.text_muted }};
+    --white: {{ section.settings.white }};
+    --radius: 12px;
+    --radius-lg: 20px;
+    --max-width: 1120px;
+    --section-pad: clamp(60px, 8vw, 120px);
   }
-}
+  #shopify-section-{{ section.id }} * { box-sizing: border-box; }
+  #shopify-section-{{ section.id }} .ninst { padding: var(--section-pad) 0; background: {{ section.settings.bg_color }}; font-family: 'Inter', -apple-system, sans-serif; }
+  #shopify-section-{{ section.id }} .ninst__container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+  #shopify-section-{{ section.id }} .ninst__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  #shopify-section-{{ section.id }} .ninst__kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brand-accent); margin-bottom: 12px; display: block; }
+  #shopify-section-{{ section.id }} .ninst__headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; color: var(--navy); margin: 0 0 20px; }
+  #shopify-section-{{ section.id }} .ninst__body { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin: 0 0 20px; }
+  #shopify-section-{{ section.id }} .ninst__steps { display: flex; flex-direction: column; gap: 24px; }
+  #shopify-section-{{ section.id }} .ninst__step { display: flex; gap: 20px; align-items: flex-start; }
+  #shopify-section-{{ section.id }} .ninst__step-number { width: 44px; height: 44px; border-radius: 12px; background: var(--brand-deep); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
+  #shopify-section-{{ section.id }} .ninst__step-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 0 0 4px; }
+  #shopify-section-{{ section.id }} .ninst__step-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+  #shopify-section-{{ section.id }} .ninst__visual { background: linear-gradient(135deg, var(--warm-gray), #d4cfc9); border-radius: var(--radius-lg); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+  #shopify-section-{{ section.id }} .ninst__visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #shopify-section-{{ section.id }} .ninst__visual-inner { text-align: center; padding: 40px; }
+  #shopify-section-{{ section.id }} .ninst__visual-icon { font-size: 4rem; margin-bottom: 12px; }
+  #shopify-section-{{ section.id }} .ninst__visual-text { font-size: 0.9rem; color: var(--text-muted); }
+  #shopify-section-{{ section.id }} .ninst__guarantee { display: flex; align-items: center; gap: 16px; background: var(--white); border-radius: var(--radius); padding: 20px 24px; margin-top: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  #shopify-section-{{ section.id }} .ninst__guarantee-icon { font-size: 2rem; flex-shrink: 0; }
+  #shopify-section-{{ section.id }} .ninst__guarantee-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+  #shopify-section-{{ section.id }} .ninst__guarantee-text strong { color: var(--text-primary); }
+  #shopify-section-{{ section.id }} .ninst__reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  #shopify-section-{{ section.id }} .ninst__reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    #shopify-section-{{ section.id }} .ninst__grid { grid-template-columns: 1fr; gap: 40px; }
+  }
 </style>
 
-<section class="install" id="shopify-section-{{ section.id }}">
-  <div class="container">
-    <div class="install__grid">
-      <div class="reveal">
-        <span class="kicker">{{ section.settings.kicker }}</span>
-        <h2 class="headline-lg">{{ section.settings.heading }}</h2>
-        <p class="body-text">{{ section.settings.description }}</p>
+<section class="ninst">
+  <div class="ninst__container">
+    <div class="ninst__grid">
+      <div class="ninst__reveal">
+        {% if section.settings.kicker != blank %}
+          <span class="ninst__kicker">{{ section.settings.kicker }}</span>
+        {% endif %}
+        <h2 class="ninst__headline">{{ section.settings.heading }}</h2>
+        {% if section.settings.body_text != blank %}
+          <p class="ninst__body">{{ section.settings.body_text }}</p>
+        {% endif %}
 
-        <div class="install__steps">
+        <div class="ninst__steps">
           {% for block in section.blocks %}
-            <div class="install__step">
-              <div class="install__step-number">{{ forloop.index }}</div>
-              <div class="install__step-content">
-                <h4>{{ block.settings.title }}</h4>
-                <p>{{ block.settings.description }}</p>
+            <div class="ninst__step" {{ block.shopify_attributes }}>
+              <div class="ninst__step-number">{{ block.settings.number }}</div>
+              <div>
+                <h4 class="ninst__step-title">{{ block.settings.title }}</h4>
+                <p class="ninst__step-text">{{ block.settings.description }}</p>
               </div>
             </div>
           {% endfor %}
         </div>
 
-        <div class="install__guarantee">
-          <div class="install__guarantee-icon">📖</div>
-          <div class="install__guarantee-text">
-            {{ section.settings.guarantee_text }}
+        {% if section.settings.guarantee_text != blank %}
+          <div class="ninst__guarantee">
+            <div class="ninst__guarantee-icon">{{ section.settings.guarantee_icon }}</div>
+            <p class="ninst__guarantee-text">{{ section.settings.guarantee_text }}</p>
           </div>
-        </div>
+        {% endif %}
       </div>
 
-      <div class="install__visual reveal">
-        {% if section.settings.image %}
-          {{ section.settings.image | image_url: width: 600 | image_tag }}
+      <div class="ninst__visual ninst__reveal">
+        {% if section.settings.visual_image != blank %}
+          <img src="{{ section.settings.visual_image | image_url: width: 1000 }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
         {% else %}
-          <div class="install__visual-inner">
-            <div class="install__visual-icon">🔧</div>
-            <p class="install__visual-text">[Installation walkthrough image/video here]</p>
+          <div class="ninst__visual-inner">
+            <div class="ninst__visual-icon">{{ section.settings.visual_icon }}</div>
+            <p class="ninst__visual-text">{{ section.settings.visual_placeholder_text }}</p>
           </div>
         {% endif %}
       </div>
@@ -215,13 +95,15 @@
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var els = document.querySelectorAll('#shopify-section-{{ section.id }} .reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  els.forEach(function(el) { observer.observe(el); });
-});
+  (function() {
+    var root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+    var els = root.querySelectorAll('.ninst__reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
 </script>
 
 {% schema %}
@@ -230,59 +112,49 @@ document.addEventListener('DOMContentLoaded', function() {
   "tag": "section",
   "class": "nuracom-installation-section",
   "settings": [
-    {
-      "type": "text",
-      "id": "kicker",
-      "label": "Kicker",
-      "default": "Simple Setup"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Install It Yourself in Under 30 Minutes"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom."
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Installation Image"
-    },
-    {
-      "type": "textarea",
-      "id": "guarantee_text",
-      "label": "Guarantee Text",
-      "default": "<strong>Full video walkthrough included</strong> with every purchase, plus a detailed printed manual. Our support team is also available if you need any help."
-    }
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Simple Setup" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Install It Yourself in Under 30 Minutes" },
+    { "type": "textarea", "id": "body_text", "label": "Body text", "default": "No tradesperson needed. No complicated wiring. Just a few basic tools and our step-by-step guide. If you can hang a shelf, you can install a Nuracom." },
+    { "type": "header", "content": "Visual panel" },
+    { "type": "image_picker", "id": "visual_image", "label": "Installation image / screenshot" },
+    { "type": "text", "id": "visual_icon", "label": "Fallback icon (if no image)", "default": "🔧" },
+    { "type": "text", "id": "visual_placeholder_text", "label": "Fallback caption", "default": "[Installation walkthrough image/video here]" },
+    { "type": "header", "content": "Guarantee row" },
+    { "type": "text", "id": "guarantee_icon", "label": "Guarantee icon (emoji)", "default": "📖" },
+    { "type": "richtext", "id": "guarantee_text", "label": "Guarantee text", "default": "<p><strong>Full video walkthrough included</strong> with every purchase, plus a detailed printed manual. Our support team is also available if you need any help.</p>" },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "bg_color", "label": "Section background", "default": "#f8f5f1" },
+    { "type": "color", "id": "brand_deep", "label": "Step number bg", "default": "#5E0404" },
+    { "type": "color", "id": "brand_accent", "label": "Kicker colour", "default": "#a8321a" },
+    { "type": "color", "id": "navy", "label": "Navy (titles)", "default": "#101a32" },
+    { "type": "color", "id": "cream", "label": "Cream", "default": "#f8f5f1" },
+    { "type": "color", "id": "warm_gray", "label": "Warm gray (visual bg)", "default": "#e8e3dd" },
+    { "type": "color", "id": "text_primary", "label": "Text primary", "default": "#1a1a1a" },
+    { "type": "color", "id": "text_secondary", "label": "Text secondary", "default": "#555555" },
+    { "type": "color", "id": "text_muted", "label": "Text muted", "default": "#888888" },
+    { "type": "color", "id": "white", "label": "White", "default": "#ffffff" }
   ],
   "blocks": [
     {
       "type": "step",
-      "name": "Installation Step",
+      "name": "Step",
       "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Step Title",
-          "default": "Step Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Step Description",
-          "default": "Step description goes here"
-        }
+        { "type": "text", "id": "number", "label": "Step number", "default": "1" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Step title" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Short description of the step." }
       ]
     }
   ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Installation"
+      "name": "Installation",
+      "blocks": [
+        { "type": "step", "settings": { "number": "1", "title": "Mark & Mount the Brackets", "description": "Use the included template to mark your ceiling. Drill, plug, and secure the mounting brackets. Takes about 10 minutes." } },
+        { "type": "step", "settings": { "number": "2", "title": "Attach the Main Unit", "description": "Click the drying rack unit into the brackets. The obstruction-sensing system auto-calibrates as soon as it's powered on." } },
+        { "type": "step", "settings": { "number": "3", "title": "Plug In & Connect", "description": "Standard Australian power outlet. Download the Nuracom app, pair via Bluetooth, and you're ready to go. One-touch operation from day one." } }
+      ]
     }
   ]
 }
